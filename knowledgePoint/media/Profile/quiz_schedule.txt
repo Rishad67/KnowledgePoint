@@ -1,0 +1,22 @@
+latex-Monday 3:00 - 4:30PM 
+ISD-(Monday) from 11:00-12:30 PM room-107
+compiler- Tuesday 4:00 PM - 5:30 PM (Rooms of 1st floor)
+database-Wenesday 5:00 PM
+
+
+latex class- B2: Sunday 11:00 AM - 1:30 PM (Biometric Lab)/B1: Sunday 2:30 PM - 5:00 PM (Biometric Lab)
+isd project-B1	11:15-12:00 
+	    B2	9:00-9:45 Wednesday at VLSI Lab
+compiler offline- A1+B1(Roll: 61-75): Satruday 11:00 AM - 2:00PM (CL)
+	  	  B1(Roll: 76-90)+B2: Tuesday 11:00 AM - 2:00 PM (CL) 
+database project
+
+
+staurday- 11:00 AM - 2:00PM(A1+B1(Roll: 61-75))-compiler offline
+sunday- 11:00 AM - 1:30 PM(b2)/2:30 PM - 5:00 PM(b1) latex class
+monday- 11:00-12:30 PM-ISD quiz
+	3:00 - 4:30PM- latex quiz
+tuesday- 11:00 AM - 2:00PM(B1(Roll: 76-90)+B2)-compiler offline   
+	 4:00 PM - 5:30 PM- compiler quiz 
+wednesday- 9:00-9:45(b2)/11:15-12:00(b1)-isd project 
+	5:00 PM- database quiz

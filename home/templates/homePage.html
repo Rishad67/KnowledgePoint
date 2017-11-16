@@ -1,0 +1,64 @@
+{% extends "base_generic.html" %}
+
+{% block upper_nav%}
+    <li><a href="#About">About us</a></li>
+    <li><a href="#Contract">Contract</a></li>
+   <li><a href="#Courses">Courses</a></li>
+{% endblock %}
+
+
+{% block content %}
+
+  <section id="About">
+    	
+  		<div class="panel" id="black-panel" style="width:90%">
+  			
+	  		<div class="panel-body row">
+	  			<h1>About us</h1>
+	            <div class="col-lg-8 mx-auto text-center">
+	           	  <hr class="light my-4">
+	              <h2 class="section-heading text-white">We've got what you need!</h2>
+	              <p class="text-faded mb-4">What to say about us?</p>
+	              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+	            </div>
+	        </div>
+     	</div>
+    </section>
+
+  <section id="Contract">
+    	
+  		<div class="panel" id="black-panel" style="width:90%">
+  			
+	  		<div class="panel-body row">
+	  			<h1>Contract</h1>
+	            <div class="col-lg-8 mx-auto text-center">
+	           	  <hr class="light my-4">
+	              <h2 class="section-heading text-white">We've got what you need!</h2>
+	              <p class="text-faded mb-4">you can contract us whenever you want</p>
+	              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+	            </div>
+	        </div>
+     	</div>
+    </section>
+
+  <section id="Courses" >
+    	
+  		<div class="panel" id="black-panel" style="width:90%">
+	  		<div class="panel-body row">
+	  			<h1>Courses</h1>
+	            <div class="col-lg-8 mx-auto text-center">
+	              <hr class="light my-4">
+	              <h2 class="section-heading text-white">We've got what you need!</h2>
+	              <p class="text-faded mb-4">Our courses are good</p>
+	              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+	            </div>
+	        </div>
+     	</div>
+    </section>
+
+
+
+
+<!-- <p class="text-muted"> You have visited this page {{num_visits}} {% if num_visits == 1 %}time{% else %}times.{% endif %}</p> -->
+
+{% endblock %}

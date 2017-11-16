@@ -1,0 +1,614 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bor",
+				"border"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"ma",
+				"margin-right"
+			],
+			[
+				"b",
+				"border-color"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"margin-",
+				"margin-top"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"pas",
+				"password2"
+			],
+			[
+				"pass",
+				"password1"
+			],
+			[
+				"p",
+				"password2"
+			],
+			[
+				"h",
+				"homePage"
+			],
+			[
+				"H",
+				"HttpResponseForbidden"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"User",
+				"UserForm"
+			],
+			[
+				"s",
+				"style\tAttr"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"a",
+				"align-items"
+			],
+			[
+				"al",
+				"align-self"
+			],
+			[
+				"r",
+				"rgba()"
+			],
+			[
+				"fil",
+				"filter"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"pro",
+				"Profile"
+			],
+			[
+				"he",
+				"height_field"
+			],
+			[
+				"w",
+				"width_field"
+			],
+			[
+				"ali",
+				"align-items"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"fo",
+				"font-weight"
+			],
+			[
+				"nav",
+				"navbar-nav"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"bgs",
+				"background-size"
+			],
+			[
+				"o",
+				"opacity"
+			],
+			[
+				"u",
+				"url()"
+			],
+			[
+				"bg",
+				"background-image"
+			],
+			[
+				"t",
+				"title"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "base_generic.html",
+			"settings":
+			{
+				"buffer_size": 5829,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test.html",
+			"settings":
+			{
+				"buffer_size": 1834,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css/mycss.css",
+			"settings":
+			{
+				"buffer_size": 987,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/views.py",
+			"settings":
+			{
+				"buffer_size": 4175,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/author_detail.html",
+			"settings":
+			{
+				"buffer_size": 485,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/models.py",
+			"settings":
+			{
+				"buffer_size": 4058,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 447.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 587.0
+	},
+	"console":
+	{
+		"height": 171.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/knowledgePoint",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration"
+	],
+	"file_history":
+	[
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/test.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/base_generic.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/indexPage.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_complete.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_confirm.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/login.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_done.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/logged_out.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/user_detail.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/user_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/knowledgePoint/settings.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/homePage.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/urls.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_email.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css/mycss.css",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/forms.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/models.py",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/book_detail.html",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/author_list.html",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/urls.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/knowledgePoint/urls.py",
+		"/C/Users/user/Desktop/Network/django-env/Scripts/pip3.exe",
+		"/C/Users/user/Desktop/Network/django-env/Scripts/pilfile.py",
+		"/C/Users/user/Desktop/Network/django-env/Scripts/pilconvert.py",
+		"/C/Users/user/Desktop/Network/django-env/Scripts/gifmaker.py",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/views.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/home/profile_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/admin.py",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/admin.py",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/models.py",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/forms.py",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/locallibrary/settings.py",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/book_renew_librarian.html",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/author_form.html",
+		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/django/contrib/auth/models.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/homePage - Copy - Copy.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/homePage - Copy.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"/home/",
+			"index"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "base_generic.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4722,
+								4722
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1795.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1834,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1818,
+								1818
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css/mycss.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 987,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								444,
+								444
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								235,
+								191
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/author_detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								262,
+								262
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1822,
+								1646
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 51.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.968030690537,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "homePage.sublime-project",
+	"replace":
+	{
+		"height": 65.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 318.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

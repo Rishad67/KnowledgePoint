@@ -1,0 +1,77 @@
+{% extends "base_generic.html" %}
+
+{% block upper_nav%}
+    <li><a href="#About">About us</a></li>
+    <li><a href="#Contract">Contract</a></li>
+   <li><a href="#Courses">Courses</a></li>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-3">
+        <div style="position: fixed">
+            <div class="panel" id="black-panel" style="margin:0 0 0 15px; height:100%;">
+                <img src="{% if user.profile.photo %}{{user.profile.photo.url}}{% endif %}" alt="{{user.profile.age}}" class="img-circle" style="width:130px;height:130px; margin:auto;">
+                <br>
+                <br>
+                <a href="">{{user.email}}</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="{% if user.is_authenticated %}col-md-9{% else %}col-md-12{% endif %}">
+	  <section id="About">
+	    	
+	  		<div class="panel" id="black-panel" style="width:90%">
+	  			
+		  		<div class="panel-body row">
+		  			<h1> My current courses</h1>
+		            <div class="col-lg-8 mx-auto text-center">
+		           	  <hr class="light my-4">
+		              <h2 class="section-heading text-white">We've got what you need!</h2>
+		              <p class="text-faded mb-4">What to say about us?</p>
+		              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+		            </div>
+		        </div>
+	     	</div>
+	    </section>
+
+	  <section id="Contract">
+	    	
+	  		<div class="panel" id="black-panel" style="width:90%">
+	  			
+		  		<div class="panel-body row">
+		  			<h1>Courses you may like</h1>
+		            <div class="col-lg-8 mx-auto text-center">
+		           	  <hr class="light my-4">
+		              <h2 class="section-heading text-white">We've got what you need!</h2>
+		              <p class="text-faded mb-4">you can contract us whenever you want</p>
+		              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+		            </div>
+		        </div>
+	     	</div>
+	    </section>
+
+	  <section id="Courses" >
+	    	
+	  		<div class="panel" id="black-panel" style="width:90%">
+		  		<div class="panel-body row">
+		  			<h1>People you may follow</h1>
+		            <div class="col-lg-8 mx-auto text-center">
+		              <hr class="light my-4">
+		              <h2 class="section-heading text-white">We've got what you need!</h2>
+		              <p class="text-faded mb-4">Our courses are good</p>
+		              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+		            </div>
+		        </div>
+	     	</div>
+	    </section>
+	</div>
+
+
+
+<!-- <p class="text-muted"> You have visited this page {{num_visits}} {% if num_visits == 1 %}time{% else %}times.{% endif %}</p> -->
+
+{% endblock %}

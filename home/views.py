@@ -3,7 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Profile
 from django.contrib.auth.models import User
 from django.views import generic
-from .forms import UserForm
+from .forms import UserForm , ProfileForm
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidden
 
@@ -31,9 +31,20 @@ def indexPage(request):
     return render(request,'indexPage.html')
 
 class ProfileUpdate(UpdateView):
-    model = Profile
-    template_name = "profile/user_form.html"
-    fields = '__all__'
+    model=Profile
+    form_class = ProfileForm
+    template_name = "profile/profile_form.html"
+    def form_valid(self,form):
+        profile = form.save(commit=False)
+        profile.user.username = form.cleaned_data['username']
+        profile.user.first_name = form.cleaned_data['first_name']
+        profile.user.last_name = form.cleaned_data['last_name']
+        profile.user.email = form.cleaned_data['email']
+        profile.user.save()
+        profile.save()
+
+        return HttpResponseRedirect(reverse('index_page') )
+
 
 class UserCreate(CreateView):
     form_class = UserForm
@@ -41,7 +52,7 @@ class UserCreate(CreateView):
 
     def dispatch(self,request,*args,**kwargs):
         if request.user.is_authenticated():
-            return HttpResponseForbidden()
+            return HttpResponseRedirect(reverse('home_page') )
 
         return super(UserCreate,self).dispatch(request,*args,**kwargs)
     
@@ -57,3 +68,5 @@ class UserCreate(CreateView):
 class UserDetailView(generic.DetailView):
     model = Profile
     template_name = 'profile/user_detail.html'
+
+

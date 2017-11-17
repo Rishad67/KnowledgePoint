@@ -13,9 +13,11 @@
     <div class="col-md-3">
         <div style="position: fixed">
             <div class="panel" id="black-panel" style="margin:0 0 0 15px; height:100%;">
-                <img src="{% if user.profile.photo %}{{user.profile.photo.url}}{% endif %}" alt="{{user.profile.age}}" class="img-circle" style="width:130px;height:130px; margin:auto;">
-                <br>
-                <br>
+            	<a href="{{ user.profile.get_absolute_url }}">
+                	<img src="{% if user.profile.photo %}{{user.profile.photo.url}}{% endif %}" alt="" class="img-circle" style="width:130px;height:130px; margin:auto;">
+                	<br>
+                	<br>
+                </a>
                 <a href="">{{user.email}}</a>
             </div>
         </div>

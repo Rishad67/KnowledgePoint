@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -116,6 +117,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+PHONENUMBER_DB_FORMAT='NATIONAL'
+
+PHONENUMBER_DEFAULT_REGION='BD'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -123,6 +127,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
+
+COUNTRIES_FLAG_URL = 'flags/{code}.gif'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'knowledgePoint/media')
 

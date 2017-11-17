@@ -22,15 +22,19 @@
 	    	</div>
 	    	<div class="row">
 	    		<span class="col-sm-4">Gender :</span>
-	    		<span class="col-sm-8"> {{profile.gender}}</span>
+	    		<span class="col-sm-8"> {{profile.get_gender_display}}</span>
 	    	</div>
 	    	<div class="row">
 	    		<span class="col-sm-4">Nationality :</span>
-	    		<span class="col-sm-8"> {{profile.nationality}}</span>
+	    		<span class="col-sm-8"> {{profile.get_nationality_display}}</span>
 	    	</div>
 	    	<div class="row">
 	    		<span class="col-sm-4">Email :</span>
 	    		<span class="col-sm-8"> {{profile.user.email}}</span>
+	    	</div>
+	    	<div class="row">
+	    		<span class="col-sm-4">Phone No :</span>
+	    		<span class="col-sm-8"> {{profile.phone_no}}</span>
 	    	</div>
 	    	<div class="row">
 	    		<span class="col-sm-4">Description :</span>

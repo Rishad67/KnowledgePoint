@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.forms import ModelForm
-from .models import Profile
+from .models import Profile,Course,Lesson
 from django.core.exceptions import ValidationError
 from django_countries.widgets import CountrySelectWidget
 from django.utils.translation import ugettext_lazy as _
@@ -10,6 +10,7 @@ import datetime #for checking renewal date range.
 class UserForm(ModelForm):
     password = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={'class' : 'form-control'}))
     comfirm_password = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={'class' : 'form-control'})) 
+    instructor = forms.BooleanField()
     class Meta:
         model = User
         fields = ['username','first_name','last_name','email']
@@ -23,7 +24,7 @@ class UserForm(ModelForm):
     def clean(self):
         cleaned_data = super(UserForm, self).clean()
         password2 = cleaned_data['comfirm_password']
-        password1 = cleaned_data['password']
+        password1 = cleaned_data['password'] 
 
         if password1 != password2:
             raise ValidationError(_('password mismatched , enter same password in both field'))
@@ -58,6 +59,27 @@ class ProfileForm(ModelForm):
         updated_initial['email'] = profile.user.email   
         kwargs.update(initial=updated_initial)
         super(ProfileForm, self).__init__(*args, **kwargs)
+
+class CourseForm(ModelForm):
+    class Meta:
+        model = Course
+        fields = ['title','motivation','keywards','cover_photo']
+        widgets = {
+        'title':forms.TextInput(attrs={'class' : 'form-control'}),
+        'motivation':forms.Textarea(attrs={'class' : 'form-control'}),
+        'keywards':forms.Textarea(attrs={'class' : 'form-control'}),
+        }
+
+class LessonForm(ModelForm):
+    class Meta:
+        model = Lesson
+        fields = ['topic','lesson_no','motivation','lesson_file','lesson_video']
+        widgets = {
+        'lesson_no':forms.NumberInput(attrs={'class' : 'form-control'}),
+        'topic':forms.TextInput(attrs={'class' : 'form-control'}),
+        'motivation':forms.Textarea(attrs={'class' : 'form-control'}),
+        }
+
 
     
 

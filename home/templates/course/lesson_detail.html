@@ -1,0 +1,58 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div class="panel" style= "width: 50%;padding-top: 20px" id="black-panel">
+	    <div class="container-fluid">
+	    	<div class="row">
+				<a href="{% if user.is_authenticated %}{% url 'student_page' %}{% else %}{% url 'home_page' %}{% endif %}"  style="float:right ;color:red"><span class="glyphicon glyphicon-remove btn btn-lg">close</span></a>
+	    	</div>
+	    	<br>
+	    	<br>
+	    	<div class="row">
+	    		<h1>{{lesson.course.title}}</h1> 
+	    	</div>
+	    	<br>
+	    	<div class="row">
+	    		<div class="col-sm-3">
+	    			<h2>Lesson-{{lesson.lesson_no}}</h2>
+	    		</div>
+	    		<div class="col-sm-offset-1 col-sm-3">
+	    			<h2>{{lesson.topic}}</h2>	    			
+	    		</div>
+	    	</div>
+	    	<br>
+	    	<br>
+	    	<br>
+	    	<div class="row">
+	    		<span class="col-sm-12"> {{lesson.motivation}}</span>
+	    	</div>
+	    	<br>
+	    	<br>
+	    	<br>
+	    	<div class="row">
+	    	 <video  class="thumbnail col-sm-offset-2" style="background-color:black;border:3px solid #523436" width="320" height="240" controls>
+  					<source src="{{lesson.lesson_video.url}}" type="video/mp4">
+					Your browser does not support the video tag.
+			</video> 
+			</div>
+	    	<br>
+	    	<br>
+	    	<br>
+
+	    	{% if perms.home.add_course %}
+	    	<div class="col-sm-offset-4 col-sm-4">
+	       		<a href="{% url 'lesson_update' lesson.pk %}" class="btn btn-primary btn-lg " style="width:120px;">Edit</a>	
+	    	</div>
+	    	{% endif %}
+
+
+
+
+	    </div>
+	            
+
+	    
+
+</div>
+{% endblock %}

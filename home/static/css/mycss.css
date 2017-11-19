@@ -42,6 +42,16 @@ section{
 h1 {
 	text-align: center;
 	color: #CCFFCE;
+	font-weight: bold;
+}
+h2{
+	text-align: center;
+	font-weight: bold;
+}
+h3{
+	text-align: center;
+	font-weight: bold;
+	color:#aabbcc;
 }
 
 #black-panel{
@@ -52,6 +62,22 @@ h1 {
  	margin-bottom: 50px;
  	border: 3px solid black; 
  	background: rgba(20,30,40,0.9);
+}
+
+#box{
+ 	margin:auto; 
+ 	padding: 10px;  
+ 	width: 100%; 
+ 	background: rgba(0,0,0,0.6);
+ 	border:3px solid black;
+}
+
+#box:hover{
+ 	margin:auto; 
+ 	padding: 10px;  
+ 	width: 100%; 
+ 	background: rgba(100,200,200,0.2);
+ 	border:3px solid #323436;
 }
 
 .form-group input,select,textarea{
@@ -65,5 +91,9 @@ select{
 	border:2px solid black;
 }
 
+.thumbnail img{
+	height:140px;
+	width: 100%
+}
 
 

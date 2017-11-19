@@ -1,0 +1,84 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div class="panel" style= "width: 50%;padding-top: 20px" id="black-panel">
+	    <div class="container-fluid">
+	    	<div class="row">
+				<a href="{% if user.is_authenticated %}{% url 'student_page' %}{% else %}{% url 'home_page' %}{% endif %}"  style="float:right ;color:red"><span class="glyphicon glyphicon-remove btn btn-lg">close</span></a>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-sm-4">
+	    			instructor:
+	    		</div>
+	    		<span class="col-sm-8">
+	    			<img src="{% if course.instructor.profile.photo %}{{course.instructor.profile.photo.url}}{% endif %}" alt="currently unavailable" class="img-thumbnail img-circle" style="width:100px;height:100px;">
+	    			<div class="caption">{{course.instructor.first_name}} {{course.instructor.last_name}}</div>
+	    		</span>
+	    	</div>
+	    	<br>
+	    	<br>
+	    	<div class="row">
+	    		<h1>{{course.title}}</h1> 
+	    	</div>
+	    	<br>
+	    	<div class="row">
+	    		{% if course.cover_photo %}
+	    		<img class="img-thumbnail" src="{{course.cover_photo.url}}" alt="" style="float:left;width:30%;height:120px;margin:0 10 10 0px ">
+	    		{% endif %}
+	    		<span> {{course.motivation}}</span>
+	    	</div>
+	    	<br>
+	    	<div class="row">
+	    		<span class="col-sm-8"> {{course.rating}}</span>
+	    	</div>
+	    	<br>
+	    	<div class="row">
+	    		<div class="col-lg-6"><h1>Lessons :</h1></div>
+	    		<br>
+	    		<div class="col-lg-offset-2 col-lg-4">	    		
+	    			<a href="{% url 'lesson_create' %}" class="btn btn-success" style="width:150px;"><span class="glyphicon glyphicon-plus"></span> Add Lesson</a>
+	    		</div>
+	    	</div>
+	    	<br>
+	    	<br>
+	    	<div class="row">
+	    	{% for lesson in course.lesson_set.all %}
+	    	<div class="row">
+			<a href="{% url 'lesson_detail' lesson.pk %}" class="thumbnail" id="box" style="height:70px;"><h3>{{lesson.topic}}</h3></a>
+			<br>
+			</div>
+	    	{% endfor %}	
+	    	</div>
+	    	<br>
+	    	<br>
+	    	<br>
+	    	<div class="row">
+	    		<span class="col-sm-offset-8 col-sm-4"> last modified : <br>{{course.last_update}}</span>
+	    	</div>
+	    	<br>
+	    	<br>
+	    	<br>
+	    	<br>
+
+	    	{% if perms.home.add_course %}
+	    	<div class="col-sm-offset-1 col-sm-4">
+	       		<a href="{% url 'course_update' course.pk %}" class="btn btn-primary btn-lg " style="width:120px;">Edit</a>	
+	    	</div>
+	    	{% endif %}
+
+	    	{% if not course.active %}
+	    	<div class="col-sm-offset-2 col-sm-5">
+	       		<a href="#" class="btn btn-primary btn-lg " style="width:120px;">Launch</a>	
+	    	</div>
+	    	{% endif %}
+
+
+
+	    </div>
+	            
+
+	    
+
+</div>
+{% endblock %}

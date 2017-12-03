@@ -3,7 +3,6 @@
 {% block upper_nav%}
     <li><a href="#About">About us</a></li>
     <li><a href="#Contract">Contract</a></li>
-   <li><a href="#Courses">Courses</a></li>
 {% endblock %}
 
 
@@ -37,7 +36,7 @@
 		        	</a>	  				
 	  			</div>
 	  			<div class="col-lg-offset-1 col-lg-3 col-md-4">
-	  				<a href="#" class="thumbnail" id="box" style="height:300px;">
+	  				<a href="{% url 'course_list' %}" class="thumbnail" id="box" style="height:300px;">
 	  					<img src={% static 'img/course.jpg' %} class="thumbnail" alt="">
 			            <div  class="caption">
 			              <h1>view popular courses</h1>
@@ -67,7 +66,7 @@
 				        <br>
 			        </div>
 					{% endfor %}
-		            </div>
+		        </div>
 	        </div>
      	</div>
    </section>

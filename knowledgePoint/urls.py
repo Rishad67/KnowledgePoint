@@ -32,7 +32,7 @@ urlpatterns += [
 ]
 
 urlpatterns += [
-    url(r'^$', RedirectView.as_view(url='/home_page/', permanent=True)),
+    url(r'^$', RedirectView.as_view(url='/home/', permanent=True)),
 ]
 
 if settings.DEBUG :

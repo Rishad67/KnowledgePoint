@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'phonenumber_field',
+    'guardian',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,12 @@ DATABASES = {
         'PASSWORD': 'rishad',
     }
 }
+
+#per object permission control
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', # this is default
+    'guardian.backends.ObjectPermissionBackend',
+)
 
 
 # Password validation

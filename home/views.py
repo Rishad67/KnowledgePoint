@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Profile,Course,Lesson
-from django.contrib.auth.models import User
 from django.views import generic
+from .models import Profile,Course,Lesson,Registration
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from guardian.shortcuts import assign_perm
+from guardian.decorators import permission_required
+from guardian.mixins import LoginRequiredMixin,PermissionRequiredMixin
 from .forms import UserForm , ProfileForm ,CourseForm , LessonForm
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import Permission
@@ -13,10 +17,6 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidde
 # Create your views here.
 #model._meta.get_all_field_names() and model._meta.get_fields()
 def homePage(request):
-    """
-    View function for home page of site.
-    """
-
     # Number of visits to this view, as counted in the session variable.
     num_visits=request.session.get('num_visits', 0)
     request.session['num_visits'] = num_visits+1
@@ -28,19 +28,41 @@ def homePage(request):
         context={'num_visits':num_visits,'courses':courses},
     )
 
+@login_required
 def indexPage(request):
     if request.user.has_perm('home.add_course'):
         return render(request,'indexPage.html')
     else:
         return render(request,'studentPage.html')
 
+@login_required
 def studentPage(request):
     return render(request,'studentPage.html')
 
+@login_required
 def instructorPage(request):
     return render(request,'instructorPage.html')
 
-class ProfileUpdate(UpdateView):
+@login_required
+def registerCourse(request,pk):
+    course = Course.objects.get(pk=pk)
+    current_lesson=course.lesson_set.get(lesson_no=1)
+    student=request.user
+    Registration.objects.create(student=student,course=course,current_lesson=current_lesson)
+    assign_perm('home.view_course_lessons', student, course)
+    return HttpResponseRedirect(course.get_absolute_url())
+
+@permission_required('home.change_course', (Course, 'pk', 'pk'))
+def launchCourse(request,pk):
+    course = Course.objects.get(pk=pk)
+    if course.active == False :
+        course.active=True
+        course.save()
+    return HttpResponseRedirect(course.get_absolute_url())
+
+
+class ProfileUpdate(PermissionRequiredMixin,UpdateView):
+    permission_required = 'home.change_profile'
     model=Profile
     form_class = ProfileForm
     template_name = "profile/profile_form.html"
@@ -72,33 +94,45 @@ class UserCreate(CreateView):
         instructor = form.cleaned_data['instructor']
         user.save()
         if instructor == True :
-            print("instructor")
             permission = Permission.objects.get(name='Can add Course')
             user.user_permissions.add(permission)
             user.save()
         Profile.objects.create(user=user)
+        profile=Profile.objects.get(user=user)
+        assign_perm("home.change_profile", user, profile)
 
-        return HttpResponseRedirect(reverse('home_page') )
+        return HttpResponseRedirect(reverse('login') )
 
-class UserDetailView(generic.DetailView):
+class UserDetailView(LoginRequiredMixin,generic.DetailView):
     model = Profile
     template_name = 'profile/user_detail.html'
 
 
-class CourseCreate(CreateView):
+class CourseCreate(PermissionRequiredMixin,CreateView):
+    permission_required = 'home.add_course'
+    model=Course
     form_class = CourseForm
     template_name = "course/course_form.html"
+
+    def get_object(self): 
+        return None
 
     def form_valid(self,form):
         course = form.save(commit=False)
         if self.request.user.is_authenticated():
             course.instructor = self.request.user
-            mycourse=Course.objects.filter(title__exact=course.title,instructor__exact=course.instructor)
-            if mycourse:
-                return HttpResponseRedirect(reverse('instructor_page') )
-            else:
-                course.save()
-                return HttpResponseRedirect(course.get_absolute_url())
+        mycourse=Course.objects.filter(title__exact=course.title,instructor__exact=course.instructor)
+        if mycourse:
+            return HttpResponseRedirect(reverse('instructor_page') )
+        else:
+            course.save()
+            assign_perm('home.change_course', course.instructor,course)
+            return HttpResponseRedirect(course.get_absolute_url())
+
+def courseList(request):
+    context={'course_list':Course.objects.filter(active__exact=True)}
+    return render(request,'course/course_list.html',context=context)    
+
 
 class CourseDetailView(generic.DetailView):
     model = Course
@@ -110,17 +144,31 @@ class CourseDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(CourseDetailView, self).get_context_data(**kwargs)
+        context['enroll'] = True
+        if self.request.user.is_authenticated():
+            registration = context['course'].registration_set.filter(student__exact=self.request.user)
+            if registration :
+                context['enroll'] = False
+                
         return context
 
-class CourseUpdate(UpdateView):
+class CourseUpdate(PermissionRequiredMixin,UpdateView):
+    permission_required = 'home.change_course'
     model=Course
     form_class = CourseForm
     template_name = "course/course_form.html"
 
 
-class LessonCreate(CreateView):
+class LessonCreate(PermissionRequiredMixin,CreateView):
     form_class = LessonForm
     template_name = "course/course_form.html"
+    permission_required = 'home.change_course'
+
+    def get_object(self): 
+        course_pk= self.request.session.get('course_pk')
+        course = Course.objects.get(pk=course_pk)
+
+        return course
 
     def form_valid(self,form):
         lesson = form.save(commit=False)
@@ -131,13 +179,20 @@ class LessonCreate(CreateView):
             return HttpResponseRedirect(reverse('instructor_page') )
         else:
             lesson.save()
+            assign_perm('home.change_lesson', self.request.user,lesson)
+            assign_perm('home.view_course_lessons', self.request.user, lesson.course)
             return HttpResponseRedirect(lesson.get_absolute_url())
 
-class LessonUpdate(UpdateView):
+class LessonUpdate(PermissionRequiredMixin,UpdateView):
+    permission_required = 'home.change_lesson'
     model=Lesson
     form_class = LessonForm
     template_name = "course/course_form.html"
 
-class LessonDetailView(generic.DetailView):
+class LessonDetailView(PermissionRequiredMixin,generic.DetailView):
+    permission_required = 'home.view_course_lessons'
     model = Lesson
     template_name = 'course/lesson_detail.html'
+
+    def get_permission_object(self):
+        return self.get_object().course

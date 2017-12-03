@@ -36,9 +36,11 @@
 	    	<div class="row">
 	    		<div class="col-lg-6"><h1>Lessons :</h1></div>
 	    		<br>
+	    		{% if perms.home.add_course %}
 	    		<div class="col-lg-offset-2 col-lg-4">	    		
 	    			<a href="{% url 'lesson_create' %}" class="btn btn-success" style="width:150px;"><span class="glyphicon glyphicon-plus"></span> Add Lesson</a>
 	    		</div>
+	    		{% endif %}
 	    	</div>
 	    	<br>
 	    	<br>
@@ -65,12 +67,17 @@
 	    	<div class="col-sm-offset-1 col-sm-4">
 	       		<a href="{% url 'course_update' course.pk %}" class="btn btn-primary btn-lg " style="width:120px;">Edit</a>	
 	    	</div>
-	    	{% endif %}
-
-	    	{% if not course.active %}
-	    	<div class="col-sm-offset-2 col-sm-5">
-	       		<a href="#" class="btn btn-primary btn-lg " style="width:120px;">Launch</a>	
-	    	</div>
+		    	{% if not course.active %}
+		    	<div class="col-sm-offset-2 col-sm-5">
+		       		<a href="{% url 'course_launch' course.pk %}" class="btn btn-primary btn-lg " style="width:120px;">Launch</a>	
+		    	</div>
+		    	{% endif %}
+	    	{% else %}
+		    	{% if course.active and enroll %}
+		    	<div class="col-sm-offset-4 col-sm-5">
+		       		<a href="{% url 'course_registration' course.pk %}" class="btn btn-success btn-lg " style="width:150px;">Enroll now</a>	
+		    	</div>
+		    	{% endif %}
 	    	{% endif %}
 
 

@@ -59,6 +59,9 @@ class Course(models.Model):
 	class Meta:
 	 	verbose_name = 'Course'
 	 	verbose_name_plural = 'Courses'
+	 	permissions = (
+            ('view_course_lessons', 'View course lessons'),
+        )
 	 		
 
 class Lesson(models.Model):
@@ -82,3 +85,14 @@ class Lesson(models.Model):
 	class Meta:
 	 	verbose_name = 'Lesson'
 	 	verbose_name_plural = 'Lessons'
+
+
+class Registration(models.Model):
+	student=models.ForeignKey(User,on_delete=models.CASCADE)
+	course=models.ForeignKey(Course,on_delete=models.CASCADE)
+	current_lesson=models.ForeignKey(Lesson,on_delete=models.CASCADE)
+
+
+class Follow(models.Model):
+	student=models.ForeignKey(User,on_delete=models.CASCADE)
+	instructor=models.ForeignKey(Course,on_delete=models.CASCADE)

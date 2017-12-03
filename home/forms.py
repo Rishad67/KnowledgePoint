@@ -10,7 +10,7 @@ import datetime #for checking renewal date range.
 class UserForm(ModelForm):
     password = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={'class' : 'form-control'}))
     comfirm_password = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={'class' : 'form-control'})) 
-    instructor = forms.BooleanField()
+    instructor = forms.BooleanField(required=False)
     class Meta:
         model = User
         fields = ['username','first_name','last_name','email']

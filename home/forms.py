@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.forms import ModelForm
-from .models import Profile,Course,Lesson
+from .models import Profile,Course,Lesson,Post
 from django.core.exceptions import ValidationError
 from django_countries.widgets import CountrySelectWidget
 from django.utils.translation import ugettext_lazy as _
@@ -10,7 +10,7 @@ import datetime #for checking renewal date range.
 class UserForm(ModelForm):
     password = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={'class' : 'form-control'}))
     comfirm_password = forms.CharField(max_length=32, widget=forms.PasswordInput(attrs={'class' : 'form-control'})) 
-    instructor = forms.BooleanField(required=False)
+
     class Meta:
         model = User
         fields = ['username','first_name','last_name','email']
@@ -63,14 +63,28 @@ class ProfileForm(ModelForm):
 class CourseForm(ModelForm):
     class Meta:
         model = Course
-        fields = ['title','motivation','keywards','cover_photo']
+        fields = ['title','motivation','keywards','catagory','cover_photo']
         widgets = {
         'title':forms.TextInput(attrs={'class' : 'form-control'}),
         'motivation':forms.Textarea(attrs={'class' : 'form-control'}),
         'keywards':forms.Textarea(attrs={'class' : 'form-control'}),
         }
 
+class PostForm(ModelForm):
+    class Meta:
+        model = Post
+        fields = ['post_type','heading','description']
+        widgets = {
+        'heading':forms.TextInput(attrs={'class' : 'form-control'}),
+        'description':forms.Textarea(attrs={'class' : 'form-control'})
+        }
+
+
 class LessonForm(ModelForm):
+    lesson_video = forms.FileField(required=False);
+    lesson_file = forms.FileField(required=False);
+
+
     class Meta:
         model = Lesson
         fields = ['topic','lesson_no','motivation','lesson_file','lesson_video']

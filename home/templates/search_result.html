@@ -1,0 +1,129 @@
+{% extends "base_generic.html" %}
+
+{% block upper_nav%}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+	{% if search %}
+	<section>
+		<h1 class="heading">Your search result</h1>
+		<div class="row" style="padding:20px;">
+		{% if search_list %}	
+			{% for course in search_list.all %}
+			<div class="col-lg-2" style="margin:10px;">
+			  	<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:315px;">
+			  		<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					<div  class="caption">
+					    <h3>{{course.title}}</h3>
+						<div style="text-align: center">
+						    <span >
+						    	<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    </span>
+						</div>
+						<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered
+						</div>
+						<br>
+						<br>
+					</div>
+				</a>
+				<br>
+			</div>
+			{% endfor %}
+		{% else %}
+			<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+  			2px solid black; ">
+  				<br>
+  				<br>
+  				<div class="row"  style="padding: 50px;">
+  					<div class="col-md-3">
+  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-search"></span>
+  					</div>
+  					<div class="col-md-9">  						
+						<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No match found for your search</div>
+						<br>
+						<br>
+						<br>
+  					</div>
+  					<br>
+  				</div>  
+  				<br>				
+  			</div>
+		{% endif %}
+		</div>
+	</section>
+	<br>
+	<br>
+	<br>
+	<br>
+	{% endif %}
+
+
+	<section id="top">
+		<h1 class="heading">Top rated courses</h1>
+		<div class="row" style="padding:20px;">
+			{% for course in top_list.all %}
+			<div class="col-lg-2" style="margin:10px;">
+			  	<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:315px;">
+			  		<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					<div  class="caption">
+					    <h3>{{course.title}}</h3>
+						<div style="text-align: center">
+						    <span >
+						    	<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    </span>
+						</div>
+						<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered
+						</div>
+						<br>
+						<br>
+					</div>
+				</a>
+				<br>
+				<br>
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+	<br>
+	<br>
+	<br>
+	<br>
+	<section id="new">
+		<h1 class="heading">New courses</h1>
+		<div class="row" style="padding:20px;">
+			{% for course in new_list.all %}
+			<div class="col-lg-2" style="margin:10px;">
+			  	<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:360px;">
+			  		<div style="font-weight: bold;font-size: 18px;">New</div>
+			  		<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					<div  class="caption">
+					    <h3>{{course.title}}</h3>
+						<div style="text-align: center">
+						    <span >
+						    	<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    </span>
+						</div>
+						<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered
+						</div>
+						<br>
+						<br>
+					</div>
+				</a>
+				<br>
+			</div>
+			{% endfor %}
+		</div>		
+	</section>
+	<br>
+	<br>
+	<br>
+
+</div>
+
+
+
+{% endblock %}

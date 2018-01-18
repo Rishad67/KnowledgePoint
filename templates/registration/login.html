@@ -2,47 +2,52 @@
 
 {% block content %}
 
-<div class="panel" id="black-panel" style="width:60%;margin-top: 100px">
+<div style="height: 100%">
   <form action="{% url 'login' %}" class="form-horizontal" method="post">
       {% csrf_token %}
-      <table>
-        <div class="row">
-            <a href="{% url 'home_page' %}"  style="float:right ;color:red"><span class="glyphicon glyphicon-remove btn btn-lg">close</span></a>
-        </div>
-        <div class="text-danger">
-            {% if form.errors %}
-              <p>Your username and password didn't match. Please try again.</p>
-            {% endif %}
+      <div class="row">
+          <div class="col-lg-offset-9 col-sm-1 " style="padding-top: 80px;">
+              <a href="{% url 'home_page' %}"  style="float:right ;color:red"><span class="glyphicon glyphicon-remove btn btn-lg">close</span></a>
+          </div>
+          <div class="col-lg-offset-3 col-sm-6" style="padding-top: 120px;">
+              <div class="text-danger">
+                  {% if form.errors %}
+                    <p>Your username and password didn't match. Please try again.</p>
+                  {% endif %}
 
-            {% if next %}
-              {% if user.is_authenticated %}
-                <p>Your account doesn't have access to this page. To proceed,
-                please login with an account that has access.</p>
-              {% else %}
-                <p>Please login to see this page.</p>
-              {% endif %}
-            {% endif %}
-        </div>
-        
-        <div class="form-group">
-          <label class="col-sm-4 control-label">{{ form.username.label_tag }}</label>
-          <div class="col-sm-8">{{ form.username }}</div>
-        </div>
+                  {% if next %}
+                    {% if user.is_authenticated %}
+                      <p>Your account doesn't have access to this page. To proceed,
+                      please login with an account that has access.</p>
+                    {% else %}
+                      <p>Please login to see this page.</p>
+                    {% endif %}
+                  {% endif %}
+              </div>
+              
+              <div class="form-group">
+                <label class="col-sm-4 control-label">{{ form.username.label_tag }}</label>
+                <div class="col-sm-8">{{ form.username }}</div>
+              </div>
 
-        <div class="form-group">
-          <label class="col-sm-4 control-label">{{ form.password.label_tag }}</label>
-          <div class="col-sm-8">{{ form.password }}</div>
-        </div>
-        
-      </table>
-      <div class="form-group">        
-        <div class="col-sm-offset-4 col-sm-10">
-            <input type="submit" class="btn btn-success" value="login" />
-            <input type="hidden" name="next" value="{{ next }}" /> 
-        </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">{{ form.password.label_tag }}</label>
+                <div class="col-sm-8">{{ form.password }}</div>
+              </div>
+              
+            </table>
+            <div class="form-group">        
+              <div class="col-sm-offset-4 col-sm-10">
+                  <input type="submit" class="btn btn-success" value="login" />
+                  <input type="hidden" name="next" value="{{ next }}" /> 
+              </div>
+            </div>            
+          </div>
+
       </div>
   </form>
             {# Assumes you setup the password_reset view in your URLconf #}
           <p style="text-align:center"><a href="{% url 'password_reset' %}">Lost password?</a></p>
 </div>
+
 {% endblock %}

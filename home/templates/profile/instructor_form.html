@@ -1,0 +1,43 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="row" style= "width: 100%;height: 100%">
+<div class="col-lg-offset-2 col-sm-8">
+
+	<form action="" class="form-horizontal" method="post" enctype="multipart/form-data">
+	    {% csrf_token %}
+
+	    <table>
+	    <br>
+	    <br>
+	    <div class="form-group">
+			<a href="{% if user.is_authenticated %}{% url 'index_page' %}{% else %}{% url 'home_page' %}{% endif %}"  style="float:right ;color:red"><span class="glyphicon glyphicon-remove btn btn-lg">close</span></a>
+		</div>
+		<br>
+		<div>
+			<div style="color:#aabbcc;font-weight:bold;font-size: 60px;text-align: center;">Instructor Account</div>
+			<h2>Please fill in the following informations </h2>
+		</div>
+		<br>
+		<br>
+		<br>
+	    	{% for field in form %}
+	    	<div class="form-group">
+	    		<span class="text-danger small">{{ field.errors }}</span>
+	    		<label class="col-sm-3 control-label">{{ field.label_tag }}</label>
+	    		<div class="col-sm-9">{{ field }}</div>
+	    	</div>
+	    	{% endfor %}
+            	    	
+	    </table>
+	    <br>
+	    <br>
+	    <div class="form-group">        
+	      <div class="col-md-offset-6 col-md-2">
+	        <input type="submit" class="btn btn-success" style="width:150px" value="Submit" />	
+	      </div>
+	    </div>
+	</form>
+</div>
+</div>
+{% endblock %}

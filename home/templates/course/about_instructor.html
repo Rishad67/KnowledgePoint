@@ -1,0 +1,93 @@
+{% extends "base_generic.html" %}
+
+{% block upper_nav%}
+<li><a href="{% url 'user_forum' %}">Blog</a></li>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row" style="padding:50px">
+
+    <div>
+        <div class="row" style="font-weight: bold">
+            <div class="col-md-offset-2 col-md-2">
+                <img src="{% if instructor.profile.photo %}{{instructor.profile.photo.url}}{% endif %}" alt="" class="img-thumbnail" style="width:220px;height:180px; margin:auto;"><div class="text-success" style="font-size: 18px;">{{instructor.email}}</div>
+                <br>                
+                <br>
+            </div>
+            <div class="col-md-5" >
+            	<div style="font-size: 60px;color:#abcdef">{{instructor.first_name}} {{instructor.last_name}}</div>
+            	<div>{{instructor.profile.description}}</div>
+            </div>
+            <br>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+  			<div class="thumbnail btn-success" style="margin: auto;border: 
+  			2px solid black;color: black ">
+  				<div class="row"  style="padding: 50px;font-size: 50px">
+  					<div class="col-md-4">
+  						<span class="glyphicon glyphicon-file"></span>Total {{instructor.course_set.count}} courses
+  					</div>
+  					<div class="col-md-4">
+  						<span class="glyphicon glyphicon glyphicon-usd"></span>Total {{instructor.registration_set.count}} students
+  					</div>
+  					<div class="col-md-4">
+  						<span class="glyphicon glyphicon glyphicon-eye-open"></span>Total {{instructor.profile.follower.count}} followers
+  					</div>
+  				</div>  				
+  			</div>
+            <br>
+        </div>
+        <br>
+        <br>
+        <a href="{% url 'instructor_follow' instructor.pk %}">
+        	<div class="box"><h2>To get latest course update follow instructor</h2></div>
+    	</a>
+    </div>
+
+    <div style="padding: 10px">
+	  	<section>
+	    	<div>
+		  		<h1 style="	text-shadow: 1px 1px 4px black;">offered courses</h1>
+		  		<br>
+		  		<br>
+		        <div class="row">
+					{% for course in user.course_set.all %}
+					{% if course.active %}
+					<div class="col-md-3 col-sm-4" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:300px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h2>{{course.title}}</h2>
+						    	<div class="row">
+						    		<span class="col-sm-offset-2 col-sm-6">
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+			        {% endif %}	
+					{% endfor %}
+		        </div>
+	     	</div>
+	    </section>
+		<br>
+		<br>
+		<br>
+		<br>
+	</div>
+</div>
+
+
+
+<!-- <p class="text-muted"> You have visited this page {{num_visits}} {% if num_visits == 1 %}time{% else %}times.{% endif %}</p> -->
+
+{% endblock %}

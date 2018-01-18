@@ -1,106 +1,99 @@
 {% extends "base_generic.html" %}
 
 {% block upper_nav%}
-    <li><a href="#About">About us</a></li>
-    <li><a href="#Contract">Contract</a></li>
+
 {% endblock %}
 
 
 {% block content %}
 
 <div class="row">
-    <div class="col-md-3">
-        <div style="position: fixed">
-            <div class="panel" id="black-panel" style="margin:0 0 0 15px; height:100%;">
-            	<a href="{{ user.profile.get_absolute_url }}">
-                	<img src="{% if user.profile.photo %}{{user.profile.photo.url}}{% endif %}" alt="" class="img-circle" style="width:130px;height:130px; margin:auto;">
-                	<br>
-                	<br>
-                </a>
-                <a href="">{{user.email}}</a>
-                <br>
-                <br>
-                <br>
-                <div>
-                	<a href="{% url 'course_create' %}" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-plus"></span> Add new Course</a>
-                </div>
-                <br>
-                <div>
-                	<a href="{% url 'student_page' %}" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-pencil"></span> Enroll as student</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="{% if user.is_authenticated %}col-md-9{% else %}col-md-12{% endif %}">
-	  <section id="About">
-	    	
-	  		<div class="panel" id="black-panel" style="width:90%">
-	  			
-		  		<div class="panel-body row">
-		  			<h1> My offered active courses</h1>
-		  			<br>
-		  			<br>
-		            <div class="row">
-						{% for course in user.course_set.all %}
-						{% if course.active %}
-						<div class="col-lg-4">
-			  				<a href="{% url 'course_detail' course.pk %}" class="thumbnail" id="box" style="height:300px;">
-			  					<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
-					        	<div  class="caption">
-					            	<h3>{{course.title}}</h3>
-					        	</div>
-				        	</a>
-				        	<br>
-			        	</div>
-			        	{% endif %}	
-						{% endfor %}
-		            </div>
+    <div class="heading col-md-2" style="height: 100%">
+    	<br>
+    	<br>
+    	<a href="{{ user.profile.get_absolute_url }}">
+        <img src="{% if user.profile.photo %}{{user.profile.photo.url}}{% endif %}" alt="" class="img-thumbnail" style="width:150px;height:130px; margin:auto;">
+        <h2>{{user.first_name}} {{user.last_name}}</h2>
+        <br>
+        <br> 
+        </a>
+		<br>
+		<a href="{% url 'course_create' %}"><div class="box"><span class="glyphicon glyphicon-plus"></span> Add new Course</div></a>
+		<br>
+		<a href="{% url 'student_page' %}"><div class="box"><span class="glyphicon glyphicon-pencil"></span> student Account</div></a>
+		<br>
+		<a href="{% url 'user_forum' %}"><div class="box"><span class="glyphicon glyphicon-check"></span> User Forum</div></a>
+		<br>
+		<a href="{{ user.profile.get_absolute_url }}"><div class="box"><span class="glyphicon glyphicon-user"></span> My Profile</div></a>
+		<br>
+	</div>	
+
+    <div class="col-md-9">
+	  	<section>
+	    	<div>
+		  		<h1 style="	text-shadow: 1px 1px 4px black;"> My offered active courses</h1>
+		  		<br>
+		  		<br>
+		        <div class="row">
+					{% for course in user.course_set.all %}
+					{% if course.active %}
+					<div class="col-md-3 col-sm-4" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:300px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h2>{{course.title}}</h2>
+						    	<div class="row">
+						    		<span class="col-sm-offset-2 col-sm-6">
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+			        {% endif %}	
+					{% endfor %}
 		        </div>
 	     	</div>
 	    </section>
-
-	  <section id="Contract">
-	    	
-	  		<div class="panel" id="black-panel" style="width:90%">
-	  			
-		  		<div class="panel-body">
-		  			<h1>Courses to complete</h1>
-		  			<br>
-		  			<br>
-		            <div class="row">
-						{% for course in user.course_set.all %}
-						{% if not course.active %}
-						<div class="col-lg-4">
-			  				<a href="{% url 'course_detail' course.pk %}" class="thumbnail" id="box" style="height:300px;">
-			  					<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
-					        	<div  class="caption">
-					            	<h3>{{course.title}}</h3>
-					        	</div>
-				        	</a>
-				        	<br>
-			        	</div>
-			        	{% endif %}	
-						{% endfor %}
-		            </div>
+		<br>
+		<br>
+	  	<section>	  			
+		  	<div>
+		  		<h1 style="	text-shadow: 1px 1px 4px black;">Courses to complete</h1>
+		  		<br>
+		  		<br>
+		        <div class="row">
+					{% for course in user.course_set.all %}
+					{% if not course.active %}
+					<div class="col-md-3 col-sm-4" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:300px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+			        {% endif %}	
+					{% endfor %}
 		        </div>
 	     	</div>
 	    </section>
-
-	  <section id="Courses" >
-	    	
-	  		<div class="panel" id="black-panel" style="width:90%">
-		  		<div class="panel-body row">
-		  			<h1>Requested course topic</h1>
-		            <div class="col-lg-8 mx-auto text-center">
-		              <hr class="light my-4">
-		              <h2 class="section-heading text-white">We've got what you need!</h2>
-		              <p class="text-faded mb-4">Our courses are good</p>
-		              <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
-		            </div>
+		<br>
+		<br>
+	    <section>
+		  	<div>
+		  		<h1 style="	text-shadow: 1px 1px 4px black;">Requested course topic</h1>
+		        <div>
 		        </div>
 	     	</div>
 	    </section>
 	</div>
+</div>
 
 
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>Bootstrap star rating example</title>
+
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<script src="js/jquery.js"></script>
+
+	<link rel="stylesheet" href="css/star-rating.min.css" />
+
+	<script src="js/star-rating.min.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+
+	<h2>Bootstrap star rating example</h2>
+
+
+    <br>
+
+    <input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value="2">
+
+    <br>
+
+
+</div>
+
+
+<script>
+
+$("#input-1").rating({readonly: true, showClear: false, showCaption: false});
+
+</script>
+
+
+</body>
+
+</html>

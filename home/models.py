@@ -23,6 +23,8 @@ class Profile(models.Model):
 	photo = models.ImageField(upload_to='Profile',null=True,blank=True,width_field="width_field",height_field="height_field")
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
+	follower = models.ManyToManyField(User,related_name='follower')
+	
 
 
 
@@ -39,11 +41,14 @@ class Profile(models.Model):
 
 class Course(models.Model):
 
+	CATAGORY=(('bu','Business'),('it','IT & Software'),('nt','Network & Security'),('pt','Photography'),('hf','Health & fitness'),('an','Android'),('wd','Web Design'),('ai','Artificial Intelligence'),('gm','Gameing'),('rb','Robotics'),('ds','Design technique'),('mc','Machine Learning'),('tc','Teaching'),('pl','Programming Language'),('ot','others'))
+
 	title = models.CharField(max_length=100)
 	instructor = models.ForeignKey(User,on_delete=models.CASCADE)
-	motivation = models.TextField(max_length=300, help_text="Enter a brief description about the course")
+	motivation = models.TextField(max_length=1000, help_text="Enter a brief description about the course")
 	keywards = models.TextField(max_length=200, help_text="Enter some keywards of course",null=True)
-	rating = models.PositiveIntegerField(default=0)
+	rating = models.PositiveIntegerField(default=0,null=True)
+	catagory = models.CharField(max_length=2,choices=CATAGORY,blank=True)
 	last_update = models.DateField(auto_now=True)
 	active = models.BooleanField(default=False)
 	cover_photo = models.ImageField(upload_to='Profile',null=True,blank=True,width_field="width_field",height_field="height_field")
@@ -70,8 +75,8 @@ class Lesson(models.Model):
 	course = models.ForeignKey(Course,on_delete=models.CASCADE)
 	motivation = models.TextField(max_length=300, help_text="Enter a brief description about the lesson")
 	lesson_no = models.PositiveIntegerField()
-	lesson_file = models.FileField(upload_to='Course/lesson')
-	lesson_video = models.FileField(upload_to='Course/lesson')
+	lesson_file = models.FileField(upload_to='Course/lesson',null=True,blank=True)
+	lesson_video = models.FileField(upload_to='Course/lesson',null=True,blank=True)
 
 
 
@@ -88,11 +93,37 @@ class Lesson(models.Model):
 
 
 class Registration(models.Model):
-	student=models.ForeignKey(User,on_delete=models.CASCADE)
-	course=models.ForeignKey(Course,on_delete=models.CASCADE)
+	student=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+	course=models.ForeignKey(Course,on_delete=models.CASCADE,null=True)
 	current_lesson=models.ForeignKey(Lesson,on_delete=models.CASCADE)
 
+class Course_request(models.Model):
+	instructor = models.ForeignKey(User,on_delete=models.CASCADE)
+	topic = models.CharField(max_length=100)
 
-class Follow(models.Model):
-	student=models.ForeignKey(User,on_delete=models.CASCADE)
-	instructor=models.ForeignKey(Course,on_delete=models.CASCADE)
+
+class Post(models.Model):
+	TYPE = (('p','problems and solutions'),('i','instructors stories'),('s','students success'),('c','career guideline'))
+	post_type = models.CharField(max_length=1,choices=TYPE,blank=True)
+	user = models.ForeignKey(User,on_delete=models.CASCADE)
+	heading =  models.CharField(max_length=100,null=True)
+	description = models.CharField(max_length=400)
+	date = models.DateField(auto_now=True)
+
+class Like(models.Model):
+	post = models.ForeignKey(Post,on_delete=models.CASCADE)	
+	user = models.ForeignKey(User,on_delete=models.CASCADE)
+
+class Comment(models.Model):
+	post = models.ForeignKey(Post,on_delete=models.CASCADE)
+	description = models.CharField(max_length=200)
+	user = models.ForeignKey(User,on_delete=models.CASCADE)
+	date = models.DateField(auto_now=True)
+
+class Reply(models.Model):
+	comment = models.ForeignKey(Comment,on_delete=models.CASCADE)
+	description = models.CharField(max_length=100)
+	user = models.ForeignKey(User,on_delete=models.CASCADE)
+	date = models.DateField(auto_now=True)
+
+		

@@ -1,0 +1,428 @@
+{% extends "base_generic.html" %}
+
+{% block upper_nav%}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+	<div class="row">
+		<div class="heading col-md-2" style="height: 100%">
+			<h1>User Forum</h1>
+			<br>
+			<a href="{% url 'post_create' %}"><div class="box"><span class="glyphicon glyphicon-plus"></span> Add Post</div></a>
+			<br>
+			<a href="#i"><div class="box"><span class="glyphicon glyphicon-pencil"></span> Instructors stories</div></a>
+			<br>
+			<a href="#s"><div class="box"><span class="glyphicon glyphicon-check"></span> Students success</div></a>
+			<br>
+			<a href="#c"><div class="box"><span class="glyphicon glyphicon-send"></span> Career guideline</div></a>
+			<br>
+			<a href="#p"><div class="box"><span class="glyphicon glyphicon-question-sign"></span> Problems and solutions</div></a>
+			<br>
+			<a href="#m"><div class="box"><span class="glyphicon glyphicon-question-sign"></span> My posts</div></a>
+		</div>		
+		<div class="col-md-10">
+			{% if p %}
+			<section id="p">
+				<h1 style="	text-shadow: 1px 1px 4px black;">Frequently asked Questions</h1>
+				{% for post in p %}
+				<div  class="thumbnail" style="background: rgba(205,255 ,244 ,0.6);margin:auto;border:2px solid black; padding: 20px;color: black">
+					<div style="font-size: 20px;">{{post.date}}</div> 					
+					<div style="font-size: 30px;">
+						<a href="{% url 'about_instructor' post.user.pk %}">{{post.user.first_name}} {{post.user.last_name}}</a>
+					</div>
+					<div class="row">
+						<div class="col-md-7" style="font-size: 40px;">{{post.heading}}</div>
+						<a class="col-md-1" href="{% url 'post_delete' post.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+					</div>
+										
+					<div>{{post.description}}</div>
+					<br>
+					<hr>
+					<div class="row">
+						<a href="{% url 'post_like' post.pk %}"><div class="col-md-3 col-lg-3">
+							<span class="glyphicon glyphicon-thumbs-up"></span>Like {{post.like_set.count}}
+						</div></a>
+						<a href="#comments{{post.pk}}" data-toggle="collapse"><div class="col-md-3 col-lg-3">
+							<span class="glyphicon glyphicon-comment"></span>Comments {{post.comment_set.count}}
+						</div></a>						
+					</div>
+					<hr>
+  					<div id="comments{{post.pk}}" style="padding: 10px 20px" class="collapse">
+    					{% for comment in post.comment_set.all %}
+							<div class="row">
+								<a style="font-size: 18px;" class="col-md-8" href="{% url 'about_instructor' comment.user.pk %}">{{comment.user.first_name}} {{comment.user.last_name}}</a>
+								<a class="col-md-1" href="{% url 'comment_delete' comment.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+							</div>					
+							<div>{{comment.description}}</div>
+							<div class="row">
+								<a class="col-md-1 text-success" href="#replies{{comment.pk}}" data-toggle="collapse">Reply</a>
+  								<div id="replies{{comment.pk}}" style="padding: 10px 20px" class="col-md-8 collapse">
+    								{% for reply in comment.reply_set.all %}
+									<div class="row">
+										<a style="font-size: 18px;" class="col-md-8" href="{% url 'about_instructor' reply.user.pk %}">{{reply.user.first_name}} {{reply.user.last_name}}</a>
+										<a class="col-md-1" href="{% url 'reply_delete' reply.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+									</div>					
+									<div>{{reply.description}}</div>							 
+    								{% endfor %}	
+			    					<br>
+			    					<br>
+			            			<form action="{% url 'reply_comment' comment.pk %}" method="get" style="padding: 15px 20px">
+			              				<div class="form-group row">
+			              					<div class="col-md-10">
+			                					<input type="text" id="reply_box{{comment.pk}}" name="reply_box" class="form-control" placeholder="Write Something...">
+			                				</div>
+			                				<div class="col-md-1">
+			                					<button type="submit" style="color: #EFAD5E; width:60px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+			                				</div>
+			              				</div>			              				
+			            			</form>	
+			            		</div>														
+							</div>								 
+    					{% endfor %}
+    					<br>
+    					<br>
+            			<form action="{% url 'comment_post' post.pk %}" method="get" style="padding: 15px 20px">
+              				<div class="form-group row">
+              					<div class="col-md-10">
+                					<input type="text" id="comment_box{{post.pk}}" name="comment_box" class="form-control" placeholder="Write Comment">
+                				</div>
+                				<div class="col-md-1">
+                					<button type="submit" style="color: #EFAD5E; width:60px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+                				</div>
+              				</div>             				
+            			</form>
+  					</div>
+				</div>
+				<br>
+				{% endfor %}
+			</section>
+			<br><br>
+			{% endif %}
+			
+			<br>
+			{% if i %}
+			<section id="i">
+				<h1 style="	text-shadow: 1px 1px 4px black;">Instructors motivative stories</h1>
+				{% for post in i %}
+				<div  class="thumbnail" style="background: rgba(205,255 ,244 ,0.6);margin:auto;border:2px solid black; padding: 20px;color: black">
+					<div style="font-size: 20px;">{{post.date}}</div> 					
+					<div style="font-size: 30px;">
+						<a href="{% url 'about_instructor' post.user.pk %}">{{post.user.first_name}} {{post.user.last_name}}</a>
+					</div>
+					<div class="row">
+						<div class="col-md-7" style="font-size: 40px;">{{post.heading}}</div>
+						<a class="col-md-1" href="{% url 'post_delete' post.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+					</div>
+										
+					<div>{{post.description}}</div>
+					<br>
+					<hr>
+					<div class="row">
+						<a href="{% url 'post_like' post.pk %}"><div class="col-md-3 col-lg-3">
+							<span class="glyphicon glyphicon-thumbs-up"></span>Like {{post.like_set.count}}
+						</div></a>
+						<a href="#comments{{post.pk}}" data-toggle="collapse"><div class="col-md-3 col-lg-3">
+							<span class="glyphicon glyphicon-comment"></span>Comments {{post.comment_set.count}}
+						</div></a>						
+					</div>
+					<hr>
+  					<div id="comments{{post.pk}}" style="padding: 10px 20px" class="collapse">
+    					{% for comment in post.comment_set.all %}
+							<div class="row">
+								<a style="font-size: 18px;" class="col-md-8" href="{% url 'about_instructor' comment.user.pk %}">{{comment.user.first_name}} {{comment.user.last_name}}</a>
+								<a class="col-md-1" href="{% url 'comment_delete' comment.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+							</div>					
+							<div>{{comment.description}}</div>
+							<div class="row">
+								<a class="col-md-1 text-success" href="#replies{{comment.pk}}" data-toggle="collapse">Reply</a>
+  								<div id="replies{{comment.pk}}" style="padding: 10px 20px" class="col-md-8 collapse">
+    								{% for reply in comment.reply_set.all %}
+									<div class="row">
+										<a style="font-size: 18px;" class="col-md-8" href="{% url 'about_instructor' reply.user.pk %}">{{reply.user.first_name}} {{reply.user.last_name}}</a>
+										<a class="col-md-1" href="{% url 'reply_delete' reply.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+									</div>					
+									<div>{{reply.description}}</div>							 
+    								{% endfor %}	
+			    					<br>
+			    					<br>
+			            			<form action="{% url 'reply_comment' comment.pk %}" method="get" style="padding: 15px 20px">
+			              				<div class="form-group row">
+			              					<div class="col-md-10">
+			                					<input type="text" id="reply_box{{comment.pk}}" name="reply_box" class="form-control" placeholder="Write Something...">
+			                				</div>
+			                				<div class="col-md-1">
+			                					<button type="submit" style="color: #EFAD5E; width:60px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+			                				</div>
+			              				</div>			              				
+			            			</form>	
+			            		</div>														
+							</div>								 
+    					{% endfor %}
+    					<br>
+    					<br>
+            			<form action="{% url 'comment_post' post.pk %}" method="get" style="padding: 15px 20px">
+              				<div class="form-group row">
+              					<div class="col-md-10">
+                					<input type="text" id="comment_box{{post.pk}}" name="comment_box" class="form-control" placeholder="Write Comment">
+                				</div>
+                				<div class="col-md-1">
+                					<button type="submit" style="color: #EFAD5E; width:60px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+                				</div>
+              				</div>             				
+            			</form>
+  					</div>
+				</div>
+				<br>
+				{% endfor %}
+			</section>
+			<br><br>
+			{% endif %}
+			
+			<br>
+			{% if s %}
+			<section id="s">
+				<h1 style="	text-shadow: 1px 1px 4px black;">Students success stories</h1>
+				{% for post in s %}
+				<div  class="thumbnail" style="background: rgba(205,255 ,244 ,0.6);margin:auto;border:2px solid black; padding: 20px;color: black">
+					<div style="font-size: 20px;">{{post.date}}</div> 					
+					<div style="font-size: 30px;">
+						<a href="{% url 'about_instructor' post.user.pk %}">{{post.user.first_name}} {{post.user.last_name}}</a>
+					</div>
+					<div class="row">
+						<div class="col-md-7" style="font-size: 40px;">{{post.heading}}</div>
+						<a class="col-md-1" href="{% url 'post_delete' post.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+					</div>
+										
+					<div>{{post.description}}</div>
+					<br>
+					<hr>
+					<div class="row">
+						<a href="{% url 'post_like' post.pk %}"><div class="col-md-3 col-lg-3">
+							<span class="glyphicon glyphicon-thumbs-up"></span>Like {{post.like_set.count}}
+						</div></a>
+						<a href="#comments{{post.pk}}" data-toggle="collapse"><div class="col-md-3 col-lg-3">
+							<span class="glyphicon glyphicon-comment"></span>Comments {{post.comment_set.count}}
+						</div></a>						
+					</div>
+					<hr>
+  					<div id="comments{{post.pk}}" style="padding: 10px 20px" class="collapse">
+    					{% for comment in post.comment_set.all %}
+							<div class="row">
+								<a style="font-size: 18px;" class="col-md-8" href="{% url 'about_instructor' comment.user.pk %}">{{comment.user.first_name}} {{comment.user.last_name}}</a>
+								<a class="col-md-1" href="{% url 'comment_delete' comment.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+							</div>					
+							<div>{{comment.description}}</div>
+							<div class="row">
+								<a class="col-md-1 text-success" href="#replies{{comment.pk}}" data-toggle="collapse">Reply</a>
+  								<div id="replies{{comment.pk}}" style="padding: 10px 20px" class="col-md-8 collapse">
+    								{% for reply in comment.reply_set.all %}
+									<div class="row">
+										<a style="font-size: 18px;" class="col-md-8" href="{% url 'about_instructor' reply.user.pk %}">{{reply.user.first_name}} {{reply.user.last_name}}</a>
+										<a class="col-md-1" href="{% url 'reply_delete' reply.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+									</div>					
+									<div>{{reply.description}}</div>							 
+    								{% endfor %}	
+			    					<br>
+			    					<br>
+			            			<form action="{% url 'reply_comment' comment.pk %}" method="get" style="padding: 15px 20px">
+			              				<div class="form-group row">
+			              					<div class="col-md-10">
+			                					<input type="text" id="reply_box{{comment.pk}}" name="reply_box" class="form-control" placeholder="Write Something...">
+			                				</div>
+			                				<div class="col-md-1">
+			                					<button type="submit" style="color: #EFAD5E; width:60px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+			                				</div>
+			              				</div>			              				
+			            			</form>	
+			            		</div>														
+							</div>								 
+    					{% endfor %}
+    					<br>
+    					<br>
+            			<form action="{% url 'comment_post' post.pk %}" method="get" style="padding: 15px 20px">
+              				<div class="form-group row">
+              					<div class="col-md-10">
+                					<input type="text" id="comment_box{{post.pk}}" name="comment_box" class="form-control" placeholder="Write Comment">
+                				</div>
+                				<div class="col-md-1">
+                					<button type="submit" style="color: #EFAD5E; width:60px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+                				</div>
+              				</div>             				
+            			</form>
+  					</div>
+				</div>
+				<br>
+				{% endfor %}
+			</section>
+			<br>
+			{% endif %}
+			<br>
+			<br>
+			{% if c %}
+			<section id="c">
+				<h1 style="	text-shadow: 1px 1px 4px black;">Carier guideline topics</h1>
+				{% for post in c %}
+				<div  class="thumbnail" style="background: rgba(205,255 ,244 ,0.6);margin:auto;border:2px solid black; padding: 20px;color: black">
+					<div style="font-size: 20px;">{{post.date}}</div> 					
+					<div style="font-size: 30px;">
+						<a href="{% url 'about_instructor' post.user.pk %}">{{post.user.first_name}} {{post.user.last_name}}</a>
+					</div>
+					<div class="row">
+						<div class="col-md-7" style="font-size: 40px;">{{post.heading}}</div>
+						<a class="col-md-1" href="{% url 'post_delete' post.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+					</div>
+										
+					<div>{{post.description}}</div>
+					<br>
+					<hr>
+					<div class="row">
+						<a href="{% url 'post_like' post.pk %}"><div class="col-md-3 col-lg-3">
+							<span class="glyphicon glyphicon-thumbs-up"></span>Like {{post.like_set.count}}
+						</div></a>
+						<a href="#comments{{post.pk}}" data-toggle="collapse"><div class="col-md-3 col-lg-3">
+							<span class="glyphicon glyphicon-comment"></span>Comments {{post.comment_set.count}}
+						</div></a>						
+					</div>
+					<hr>
+  					<div id="comments{{post.pk}}" style="padding: 10px 20px" class="collapse">
+    					{% for comment in post.comment_set.all %}
+							<div class="row">
+								<a style="font-size: 18px;" class="col-md-8" href="{% url 'about_instructor' comment.user.pk %}">{{comment.user.first_name}} {{comment.user.last_name}}</a>
+								<a class="col-md-1" href="{% url 'comment_delete' comment.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+							</div>					
+							<div>{{comment.description}}</div>
+							<div class="row">
+								<a class="col-md-1 text-success" href="#replies{{comment.pk}}" data-toggle="collapse">Reply</a>
+  								<div id="replies{{comment.pk}}" style="padding: 10px 20px" class="col-md-8 collapse">
+    								{% for reply in comment.reply_set.all %}
+									<div class="row">
+										<a style="font-size: 18px;" class="col-md-8" href="{% url 'about_instructor' reply.user.pk %}">{{reply.user.first_name}} {{reply.user.last_name}}</a>
+										<a class="col-md-1" href="{% url 'reply_delete' reply.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+									</div>					
+									<div>{{reply.description}}</div>							 
+    								{% endfor %}	
+			    					<br>
+			    					<br>
+			            			<form action="{% url 'reply_comment' comment.pk %}" method="get" style="padding: 15px 20px">
+			              				<div class="form-group row">
+			              					<div class="col-md-10">
+			                					<input type="text" id="reply_box{{comment.pk}}" name="reply_box" class="form-control" placeholder="Write Something...">
+			                				</div>
+			                				<div class="col-md-1">
+			                					<button type="submit" style="color: #EFAD5E; width:60px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+			                				</div>
+			              				</div>			              				
+			            			</form>	
+			            		</div>														
+							</div>								 
+    					{% endfor %}
+    					<br>
+    					<br>
+            			<form action="{% url 'comment_post' post.pk %}" method="get" style="padding: 15px 20px">
+              				<div class="form-group row">
+              					<div class="col-md-10">
+                					<input type="text" id="comment_box{{post.pk}}" name="comment_box" class="form-control" placeholder="Write Comment">
+                				</div>
+                				<div class="col-md-1">
+                					<button type="submit" style="color: #EFAD5E; width:60px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+                				</div>
+              				</div>             				
+            			</form>
+  					</div>
+				</div>
+				<br>
+				{% endfor %}
+			</section>
+			<br><br>
+			{% endif %}
+			
+			<br>
+			{% if m %}
+			<section id="m">
+				<h1 style="	text-shadow: 1px 1px 4px black;">My Posts</h1>
+				{% for post in m %}
+				<div  class="thumbnail" style="background: rgba(205,255 ,244 ,0.6);margin:auto;border:2px solid black; padding: 20px;color: black">
+					<div style="font-size: 20px;">{{post.date}}</div> 					
+					<div style="font-size: 30px;">
+						<a href="{% url 'about_instructor' post.user.pk %}">{{post.user.first_name}} {{post.user.last_name}}</a>
+					</div>
+					<div class="row">
+						<div class="col-md-7" style="font-size: 40px;">{{post.heading}}</div>
+						<a class="col-md-1" href="{% url 'post_delete' post.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+					</div>
+										
+					<div>{{post.description}}</div>
+					<br>
+					<hr>
+					<div class="row">
+						<a href="{% url 'post_like' post.pk %}"><div class="col-md-3 col-lg-3">
+							<span class="glyphicon glyphicon-thumbs-up"></span>Like {{post.like_set.count}}
+						</div></a>
+						<a href="#comments{{post.pk}}" data-toggle="collapse"><div class="col-md-3 col-lg-3">
+							<span class="glyphicon glyphicon-comment"></span>Comments {{post.comment_set.count}}
+						</div></a>						
+					</div>
+					<hr>
+  					<div id="comments{{post.pk}}" style="padding: 10px 20px" class="collapse">
+    					{% for comment in post.comment_set.all %}
+							<div class="row">
+								<a style="font-size: 18px;" class="col-md-8" href="{% url 'about_instructor' comment.user.pk %}">{{comment.user.first_name}} {{comment.user.last_name}}</a>
+								<a class="col-md-1" href="{% url 'comment_delete' comment.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+							</div>					
+							<div>{{comment.description}}</div>
+							<div class="row">
+								<a class="col-md-1 text-success" href="#replies{{comment.pk}}" data-toggle="collapse">Reply</a>
+  								<div id="replies{{comment.pk}}" style="padding: 10px 20px" class="col-md-8 collapse">
+    								{% for reply in comment.reply_set.all %}
+									<div class="row">
+										<a style="font-size: 18px;" class="col-md-8" href="{% url 'about_instructor' reply.user.pk %}">{{reply.user.first_name}} {{reply.user.last_name}}</a>
+										<a class="col-md-1" href="{% url 'reply_delete' reply.pk %}"><span class=" glyphicon glyphicon-trash"></span>delete</a>
+									</div>					
+									<div>{{reply.description}}</div>							 
+    								{% endfor %}	
+			    					<br>
+			    					<br>
+			            			<form action="{% url 'reply_comment' comment.pk %}" method="get" style="padding: 15px 20px">
+			              				<div class="form-group row">
+			              					<div class="col-md-10">
+			                					<input type="text" id="reply_box{{comment.pk}}" name="reply_box" class="form-control" placeholder="Write Something...">
+			                				</div>
+			                				<div class="col-md-1">
+			                					<button type="submit" style="color: #EFAD5E; width:60px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+			                				</div>
+			              				</div>			              				
+			            			</form>	
+			            		</div>														
+							</div>								 
+    					{% endfor %}
+    					<br>
+    					<br>
+            			<form action="{% url 'comment_post' post.pk %}" method="get" style="padding: 15px 20px">
+              				<div class="form-group row">
+              					<div class="col-md-10">
+                					<input type="text" id="comment_box{{post.pk}}" name="comment_box" class="form-control" placeholder="Write Comment">
+                				</div>
+                				<div class="col-md-1">
+                					<button type="submit" style="color: #EFAD5E; width:60px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+                				</div>
+              				</div>             				
+            			</form>
+  					</div>
+				</div>
+				<br>
+				{% endfor %}				
+			</section>
+			<br>
+			{% endif %}
+			<br>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

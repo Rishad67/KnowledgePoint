@@ -2,37 +2,39 @@
 
 {% block content %}
 
-<div class="panel" style= "width: 60%" id="black-panel">
+<div style="width: 100%;">
 
-	<form action="" class="form-horizontal" method="post" enctype="multipart/form-data">
-	    {% csrf_token %}
+	<div class="form-group">
+		<a  href="{% if user.is_authenticated %}{% url 'index_page' %}{% else %}{% url 'home_page' %}{% endif %}"  style="float:right ;color:red; margin-top: 0px"><span class="glyphicon glyphicon-remove btn btn-lg">close</span></a>
+	</div>
+	<br>
+	<div style="padding:100px 300px;">
+		<form action="" class="form-horizontal" method="post" enctype="multipart/form-data">
+		    {% csrf_token %}
 
-	    <table>
-	    <div class="form-group">
-			<a  href="{% if user.is_authenticated %}{% url 'index_page' %}{% else %}{% url 'home_page' %}{% endif %}"  style="float:right ;color:red; margin-top: 0px"><span class="glyphicon glyphicon-remove btn btn-lg">close</span></a>
-		</div>
-		<br>
-		<br>
-		<div class="form-group">
-	    	<span class="col-sm-offset-5 col-sm-10"><img src="{% if profile.photo %}{{profile.photo.url}}{% endif %}" alt="currently unavailable" class="img-thumbnail img-circle" style="width:100px;height:100px;"></span>
-	    </div>	
-	    <br>
-	    <br>    		    	
-	    	{% for field in form %}
-	    	<div class="form-group">
-	    		<span class="text-danger small">{{ field.errors }}</span>
-	    		<label class="col-sm-3 control-label">{{ field.label_tag }}</label>
-	    		<div class="col-sm-9">{{ field }}</div>
-	    	</div>
-	    	{% endfor %}
-	    </table>
-	    <br>
-	    <br>
-	    <div class="form-group">        
-	      <div class="col-sm-offset-5 col-sm-10">
-	        <input type="submit" class="btn btn-success btn-lg" style="width:150px" value="Submit" />	
-	      </div>
-	    </div>
-	</form>
+		    <table>
+			<br>
+			<div class="form-group">
+		    	<span class="col-sm-offset-5 col-sm-7"><img src="{% if profile.photo %}{{profile.photo.url}}{% endif %}" alt="currently unavailable" class="img-thumbnail img-circle" style="width:100px;height:100px;"></span>
+		    </div>	
+		    <br>
+		    <br>    		    	
+		    	{% for field in form %}
+		    	<div class="form-group">
+		    		<span class="text-danger small">{{ field.errors }}</span>
+		    		<label class=" control-label">{{ field.label_tag }}</label>
+		    		<div>{{ field }}</div>
+		    	</div>
+		    	{% endfor %}
+		    </table>
+		    <br>
+		    <br>
+		    <div class="form-group">        
+		      <div class="col-sm-offset-5 col-sm-7">
+		        <input type="submit" class="btn btn-success btn-lg" style="width:150px" value="Submit" />	
+		      </div>
+		    </div>
+		</form>		
+	</div>
 </div>
 {% endblock %}

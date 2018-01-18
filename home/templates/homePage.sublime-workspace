@@ -4,16 +4,164 @@
 		"selected_items":
 		[
 			[
+				"us",
+				"user"
+			],
+			[
+				"col",
+				"col-md-8"
+			],
+			[
+				"col-md-",
+				"col-md-8"
+			],
+			[
+				"c",
+				"class\tAttr"
+			],
+			[
+				"co",
+				"comment"
+			],
+			[
+				"de",
+				"description"
+			],
+			[
+				"se",
+				"search_list"
+			],
+			[
+				"sea",
+				"search_list"
+			],
+			[
+				"u",
+				"user"
+			],
+			[
+				"user",
+				"user_forum"
+			],
+			[
+				"Type",
+				"TYPE"
+			],
+			[
+				"C",
+				"Comment"
+			],
+			[
+				"M",
+				"Model"
+			],
+			[
+				"in",
+				"instructor"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
 				"re",
-				"registration"
+				"request"
+			],
+			[
+				"text",
+				"text-success"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"h",
+				"heading"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"f",
+				"filter"
+			],
+			[
+				"Q",
+				"query"
+			],
+			[
+				"k",
+				"keys"
+			],
+			[
+				"fo",
+				"font-weight"
+			],
+			[
+				"mi",
+				"min-height"
+			],
+			[
+				"CA",
+				"CATAGORY"
+			],
+			[
+				"r",
+				"robotics"
+			],
+			[
+				"a",
+				"ai"
+			],
+			[
+				"j",
+				"jquery"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"btn",
+				"btn-primary"
+			],
+			[
+				"s",
+				"star"
+			],
+			[
+				"magr",
+				"margin-bottom"
 			],
 			[
 				"obj",
 				"objects"
-			],
-			[
-				"s",
-				"self"
 			],
 			[
 				"cha",
@@ -32,24 +180,12 @@
 				"col-sm-3"
 			],
 			[
-				"fon",
-				"font-weight"
-			],
-			[
 				"img",
 				"img-circle"
 			],
 			[
 				"i",
 				"instructor"
-			],
-			[
-				"ba",
-				"background-image"
-			],
-			[
-				"btn",
-				"btn-primary"
 			],
 			[
 				"m",
@@ -60,14 +196,6 @@
 				"img-thumbnail"
 			],
 			[
-				"pa",
-				"padding-left"
-			],
-			[
-				"padd",
-				"padding-top"
-			],
-			[
 				"course",
 				"course_id"
 			],
@@ -76,28 +204,8 @@
 				"get_success_url"
 			],
 			[
-				"co",
-				"course"
-			],
-			[
-				"de",
-				"default"
-			],
-			[
-				"ma",
-				"max_length"
-			],
-			[
-				"c",
-				"class\tAttr"
-			],
-			[
 				"pro",
 				"Profile"
-			],
-			[
-				"k",
-				"kwargs"
 			],
 			[
 				"pr",
@@ -120,24 +228,12 @@
 				"first_name"
 			],
 			[
-				"user",
-				"username"
-			],
-			[
 				"max",
 				"max-width"
 			],
 			[
-				"b",
-				"border-color"
-			],
-			[
 				"pos",
 				"position"
-			],
-			[
-				"mar",
-				"margin-top"
 			],
 			[
 				"margin-",
@@ -156,10 +252,6 @@
 				"password1"
 			],
 			[
-				"h",
-				"homePage"
-			],
-			[
 				"H",
 				"HttpResponseForbidden"
 			],
@@ -172,16 +264,8 @@
 				"form-group"
 			],
 			[
-				"a",
-				"align-items"
-			],
-			[
 				"al",
 				"align-self"
-			],
-			[
-				"r",
-				"rgba()"
 			],
 			[
 				"fil",
@@ -204,16 +288,8 @@
 				"align-items"
 			],
 			[
-				"text",
-				"text-align"
-			],
-			[
 				"font-s",
 				"font-size"
-			],
-			[
-				"fo",
-				"font-weight"
 			],
 			[
 				"nav",
@@ -236,10 +312,6 @@
 				"opacity"
 			],
 			[
-				"u",
-				"url()"
-			],
-			[
 				"bg",
 				"background-image"
 			],
@@ -252,22 +324,55 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
+			"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/urls.py",
 			"settings":
 			{
-				"buffer_size": 7227,
+				"buffer_size": 2446,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "from django.db import models\nfrom django.contrib.auth.models import User\nfrom django.core.urlresolvers import reverse\nfrom django.core.exceptions import ValidationError\nfrom django.utils.translation import ugettext_lazy as _\n# to get this field use-\"pip install django-phonenumber-field\"\nfrom phonenumber_field.modelfields import PhoneNumberField \n# to get this field use-\"pip install django-countries\" \nfrom django_countries.fields import CountryField\n# Create your models here.\n\nclass Profile(models.Model):\n\n\tGENDER=(('M','male'),('F','female'))\n\t\n\tuser = models.OneToOneField(User,on_delete=models.CASCADE)\n\tdescription = models.TextField(max_length=300, help_text=\"Enter a brief description about profession or educational background\")\n\tgender = models.CharField(max_length=1,choices=GENDER,blank=True)\n\tage = models.PositiveIntegerField(null=True,blank=True)\n\tnationality = CountryField(blank_label='select country')\n\tphone_no = PhoneNumberField(blank=True,default=\"+880\")\n\tresume = models.FileField(upload_to='Profile',null=True,blank=True)\n\tphoto = models.ImageField(upload_to='Profile',null=True,blank=True,width_field=\"width_field\",height_field=\"height_field\")\n\theight_field = models.IntegerField(default=0)\n\twidth_field = models.IntegerField(default=0)\n\t\n\n\n\n\tdef __str__(self):\n\t \treturn self.user.username\n\n\tdef get_absolute_url(self):\n\t\treturn reverse('user_detail', args=[str(self.id)])\n\n\tclass Meta:\n\t \tverbose_name = 'Profile'\n\t \tverbose_name_plural = 'Profiles'\n\n\nclass Course(models.Model):\n\n\ttitle = models.CharField(max_length=100)\n\tinstructor = models.ForeignKey(User,on_delete=models.CASCADE)\n\tmotivation = models.TextField(max_length=300, help_text=\"Enter a brief description about the course\")\n\tkeywards = models.TextField(max_length=200, help_text=\"Enter some keywards of course\",null=True)\n\trating = models.PositiveIntegerField(default=0)\n\tlast_update = models.DateField(auto_now=True)\n\tactive = models.BooleanField(default=False)\n\tcover_photo = models.ImageField(upload_to='Profile',null=True,blank=True,width_field=\"width_field\",height_field=\"height_field\")\n\theight_field = models.IntegerField(default=0)\n\twidth_field = models.IntegerField(default=0)\n\n\tdef __str__(self):\n\t \treturn self.title\n\n\tdef get_absolute_url(self):\n\t\treturn reverse('course_detail', args=[str(self.id)])\n\n\tclass Meta:\n\t \tverbose_name = 'Course'\n\t \tverbose_name_plural = 'Courses'\n\t \tpermissions = (\n            ('view_course_lessons', 'View course lessons'),\n        )\n\t \t\t\n\nclass Lesson(models.Model):\n\n\ttopic = models.CharField(max_length=100)\n\tcourse = models.ForeignKey(Course,on_delete=models.CASCADE)\n\tmotivation = models.TextField(max_length=300, help_text=\"Enter a brief description about the lesson\")\n\tlesson_no = models.PositiveIntegerField()\n\tlesson_file = models.FileField(upload_to='Course/lesson')\n\tlesson_video = models.FileField(upload_to='Course/lesson')\n\n\n\n\n\tdef __str__(self):\n\t \treturn self.topic\n\n\tdef get_absolute_url(self):\n\t\treturn reverse('lesson_detail', args=[str(self.id)])\n\n\tclass Meta:\n\t \tverbose_name = 'Lesson'\n\t \tverbose_name_plural = 'Lessons'\n\n\nclass Registration(models.Model):\n\tstudent=models.ForeignKey(User,on_delete=models.CASCADE)\n\tcourse=models.ForeignKey(Course,on_delete=models.CASCADE)\n\tcurrent_lesson=models.ForeignKey(Lesson,on_delete=models.CASCADE)\n\n",
-			"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/models.py",
-			"file_size": 3545,
-			"file_write_time": 131567869418504487,
+			"file": "user_forum.html",
 			"settings":
 			{
-				"buffer_size": 3301,
+				"buffer_size": 21772,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "homePage.html",
+			"settings":
+			{
+				"buffer_size": 9346,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/models.py",
+			"settings":
+			{
+				"buffer_size": 5029,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
+			"settings":
+			{
+				"buffer_size": 12894,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "studentPage.html",
+			"settings":
+			{
+				"buffer_size": 3819,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -336,29 +441,82 @@
 	[
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/knowledgePoint",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration"
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course"
 	],
 	"file_history":
 	[
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/about_instructor.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/course_list.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/urls.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/user_forum.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css/mycss.css",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/studentPage.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/instructorPage.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/models.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/forms.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/course_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/base_generic.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/search_result.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/homePage.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/course_detail.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/lesson_detail.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/profile_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/user_detail.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/indexPage.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/instructor_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/user_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/test.html",
+		"/C/Users/user/Desktop/test.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/js/star-rating.min.js",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css/star-rating.min.css",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/login.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_complete.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/logged_out.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_email.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_done.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_confirm.html",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 2/1405067/code/userprog/progtest.cc",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/machine/stats.cc",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/machine/sysdep.cc",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/bin/disasm.c",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/bin/halt",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/machine/mipssim.h",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/machine/mipssim.cc",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/userprog/progtest.cc",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/userprog/syscall.h",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/threads/main.cc",
+		"/C/Users/user/Downloads/Compressed/nachos_64bit/nachos_64bit/code/threads/synch.cc",
+		"/C/Users/user/Downloads/Compressed/nachos_64bit/nachos_64bit/code/test/halt.c",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/userprog/addrspace.h",
+		"/C/Users/user/Downloads/Compressed/nachos_64bit/nachos_64bit/code/test/halt",
+		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/userprog/addrspace.cc",
+		"/C/Users/user/Downloads/Offline3/Offline3/src/NetworkLayerServer.java",
+		"/E/Level-3,Term-2/Computer Network Sessional (322)/NetworkLayerTemplate/NetworkLayer/src/networklayer/Router.java",
+		"/E/Level-3,Term-2/Computer Network Sessional (322)/1405067/topology.txt",
+		"/E/Level-3,Term-2/Computer Network Sessional (322)/NetworkLayerTemplate/NetworkLayer/topology.txt",
+		"/E/Level-3,Term-2/Computer Network Sessional (322)/NetworkLayerTemplate/NetworkLayer/topologyPre.txt",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/knowledgePoint/settings.py",
+		"/C/Users/user/Downloads/NetworkLayer/NetworkLayer/src/networklayer/ServerThread.java",
+		"/E/Level-3,Term-2/Computer Network Sessional (322)/NetworkLayerTemplate/NetworkLayer/src/networklayer/Client.java",
+		"/C/Users/user/Downloads/NetworkLayer/NetworkLayer/src/networklayer/NetworkLayerServer.java",
+		"/C/Users/user/Downloads/NetworkLayer/NetworkLayer/src/networklayer/Client.java",
+		"/C/Users/user/Downloads/NetworkLayer/NetworkLayer/src/networklayer/Packet.java",
+		"/C/Users/user/Downloads/NetworkLayer/NetworkLayer/src/networklayer/Router.java",
+		"/C/Users/user/Downloads/NetworkLayer/NetworkLayer/src/networklayer/EndDevice.java",
+		"/H/GccApplication4/GccApplication4/GccApplication4/GccApplication4.c",
+		"/C/Users/user/Desktop/ADC_sample.c",
+		"/E/Level-3,Term-2/Microprocessor _ microcontroller sessional(316)/GccApplication4/GccApplication4/GccApplication4/GccApplication4.c",
+		"/E/Level-3,Term-2/Microprocessor _ microcontroller sessional(316)/GccApplication4/GccApplication4/GccApplication4/lcd.h",
+		"/H/ADC_sample.c",
 		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/threads/list.h",
 		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/threads/scheduler.cc",
 		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/threads/thread.cc",
 		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/threads/synch.cc",
 		"/C/Users/user/Downloads/Offline3/Offline3/src/RoutingTableEntry.java",
-		"/E/Level-3,Term-2/Computer Network Sessional (322)/NetworkLayerTemplate/NetworkLayer/topology.txt",
 		"/E/Level-3,Term-2/OS sessional(314)/Nachos Assignment 1/nachos_64bit/nachos_64bit/code/threads/utility.cc",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/urls.py",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/homePage.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/user_detail.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/course_detail.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
 		"/E/Level-2 ,Term-1/CSE-201-Object oriented programming/C++/Lecture/Lecture 10-Virtual Functions.pdf",
 		"/E/Level-1,Term-2/CSE/problems/L-1, T-2/How Many Zeros.c",
 		"/E/Level-1,Term-2/CSE/problems/L-1, T-2/Prime Checker Function.c",
@@ -378,24 +536,11 @@
 		"/E/Level-3,Term-2/Microprocessor _ microcontroller sessional(316)/Experiment4/code/Experiment4.atsln",
 		"/C/Users/user/Downloads/1405067/1405067/1405067.c",
 		"/E/1405067/1405067.sh",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/studentPage.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/course_list.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/base_generic.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/indexPage.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/instructorPage.html",
 		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/guardian/mixins.py",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/models.py",
 		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/guardian/decorators.py",
 		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/django/views/generic/edit.py",
 		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/django/views/generic/detail.py",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/knowledgePoint/settings.py",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/forms.py",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/knowledgePoint/urls.py",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css/mycss.css",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/lesson_detail.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/course_form.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/profile_form.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/user_form.html",
 		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/book_renew_librarian.html",
 		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/django_countries/fields.py",
 		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/django_countries/models.py",
@@ -403,13 +548,6 @@
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/test.html",
 		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/phonenumbers/phonenumber.py",
 		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/phonenumbers/prefix.py",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_complete.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_confirm.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/login.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_form.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_done.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/logged_out.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration/password_reset_email.html",
 		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/book_detail.html",
 		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/author_list.html",
 		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/urls.py",
@@ -431,7 +569,7 @@
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -445,6 +583,32 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"course_detail",
+			"-md-1 text-success\" href=\"#replies{{comment.pk}}\" data-toggle=\"collapse\">Reply",
+			"<a class=\"col-md-1\" href=\"#replies{{comment.pk}}\" data-toggle=\"collapse\">Reply",
+			"type",
+			"return HttpResponseRedirect(",
+			"Course",
+			"perms",
+			"perm",
+			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:320px;\">",
+			"<div class=\"row\" style=\"padding:30px;\">",
+			"<h2>{{course.title}}</h2>",
+			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:350px;\">",
+			"<div class=\"col-lg-3\" style=\"margin:10px;\">",
+			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:300px;\">",
+			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:350px;\">",
+			"<h2>{{course.title}}</h2>",
+			"style=\"margin:10px 20px;padding:10px;\">",
+			"style=\"margin:10px 20px;padding:20px;\">",
+			"<div class=\"row\" style=\"padding:20px;\">",
+			"<div class=\"col-lg-3\" style=\"margin:10px;\">",
+			"<div class=\"row\" style=\"padding:30px;\">",
+			"padding:30px",
+			"course_list",
+			"course",
+			"box",
+			"id",
 			"as_view",
 			"/home/",
 			"index"
@@ -455,6 +619,21 @@
 		"regex": false,
 		"replace_history":
 		[
+			"<a class=\"col-md-1 text-danger\" href=\"#replies{{comment.pk}}\" data-toggle=\"collapse\">Reply",
+			"<a class=\"col-md-1 text-success\" href=\"#replies{{comment.pk}}\" data-toggle=\"collapse\">Reply",
+			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:315px;\">",
+			"<div class=\"row\" style=\"padding:20px;\">",
+			"<h3>{{course.title}}</h3>",
+			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:320px;\">",
+			"<div class=\"col-lg-2\" style=\"margin:10px;\">",
+			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:320px;\">",
+			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:300px;\">",
+			"<h3>{{course.title}}</h3>",
+			"<div class=\"row\" style=\"margin:10px 20px;padding:20px;\">",
+			"<div class=\"row\" style=\"margin:10px 20px;padding:10px;\">",
+			"<div class=\"row\" style=\"margin:10px 20px;padding:20px;\">",
+			"<div class=\"col-lg-2\" style=\"margin:10px;\">",
+			"<div class=\"row\" style=\"padding:20px;\">"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -465,24 +644,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
+					"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/urls.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7227,
+						"buffer_size": 2446,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5573,
-								5573
+								634,
+								634
 							]
 						],
 						"settings":
@@ -492,27 +671,84 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4284.0,
+						"translation.y": 150.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/models.py",
+					"file": "user_forum.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3301,
+						"buffer_size": 21772,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1265,
-								1265
+								14666,
+								14666
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 8550.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "homePage.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								258,
+								204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5029,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3790,
+								3790
 							]
 						],
 						"settings":
@@ -521,10 +757,69 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2268.0,
+						"translation.y": 2025.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1960,
+								1960
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 825.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "studentPage.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3819,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1959,
+								1959
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1750.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -534,7 +829,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 6,
 					"file": "/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/views.py",
 					"semi_transient": false,
 					"settings":
@@ -560,11 +855,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 7,
 					"file": "/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/author_detail.html",
 					"semi_transient": false,
 					"settings":
@@ -590,11 +885,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 8,
 					"file": "/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/models.py",
 					"semi_transient": false,
 					"settings":
@@ -617,10 +912,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 672.0,
+						"translation.y": 600.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -628,7 +923,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 38.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -672,7 +967,7 @@
 	"project": "homePage.sublime-project",
 	"replace":
 	{
-		"height": 71.0
+		"height": 65.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -710,7 +1005,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 247.0,
+	"side_bar_width": 325.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

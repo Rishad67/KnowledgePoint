@@ -1,19 +1,31 @@
 {% extends "base_generic.html" %}
 
-{% block content %}
 
-  		<div class="panel" id="black-panel" style="width:90%">
-	  		<div class="panel-body row">
-	  			<h1>Courses</h1>
+{% block upper_nav%}
+
+{% endblock %}
+{% block content %}
+     <section id="it">    	
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 60px">IT and Software</h1>
 		  		<br>
 		  		<br>
-		        <div class="row">
-					{% for course in course_list.all %}
-					<div class="col-lg-3">
-			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail" id="box" style="height:300px;">
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in it.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
 			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
 					        <div  class="caption">
 					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span >
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
 					        </div>
 				        </a>
 				        <br>
@@ -22,5 +34,457 @@
 		        </div>
 	        </div>
      	</div>
+     </section>
+     <br>
+     <section id="network">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 60px">Networking and Security</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in network.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="photography">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1  class="heading" style="font-size: 60px">Photography</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in photography.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="health">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 60px">Health and Fitness</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in health.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="android">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 60px">Android Development</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in android.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="webdesign">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 45px">HTML,CSS,JavaScript and other web templates</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in web.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="ai">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 60px">Artificial Intelligence</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in ai.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="game">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 60px">Game Development</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in gameing.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="robotics">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 60px">Robotics</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in robotics.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="design">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 50px">Basic and Advanced Design technicque</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in design.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="machineLearning">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 60px">Machine Learning</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in machine.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="teaching">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 60px">Teaching training</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in teaching.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>
+     <section id="language">
+     	<br><br><br>
+     	<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 60px">Programming Languages </h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in programming.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>     	
+	<section id="business">
+		<br><br><br>
+  		<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 50px">Business Leadership and Marketing</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in business.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+     </section>
+     <br>    	
+	<section id="business">
+		<br><br><br>
+  		<div style="width:100%;height: 100%">
+	  		<div class="row">
+	  			<h1 class="heading" style="font-size: 50px">Miscellenous courses</h1>
+		  		<br>
+		  		<br>
+		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+					{% for course in others.all %}
+					<div class="col-lg-2" style="margin:10px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
+			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h3>{{course.title}}</h3>
+						    	<div style="text-align: center">
+						    		<span>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
+						    		</span>
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+					{% endfor %}
+		        </div>
+	        </div>
+     	</div>
+    </section>
+	<br>
+	<br> 
+
 
 {% endblock %}

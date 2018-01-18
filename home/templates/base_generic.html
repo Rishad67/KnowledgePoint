@@ -18,56 +18,57 @@
 <script src={% static 'js/jquery.js' %}></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src={% static 'js/bootstrap.min.js' %} integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href={% static 'css/star-rating.min.css' %} />
+<script src={% static 'js/star-rating.min.js' %}></script>
 
 </head>
 
 <body id="page-top" >
-  <div id="overlay" style="margin-top: 130px;">
-      <nav class="navbar navbar-fixed-top" style="border: none; border-radius: 0; background: rgba(0,0,0,0.9);">
-          <div class="container-fluid " style="height: 100px">
+  <div id="overlay">
+      <nav class="navbar navbar-fixed-top btn-primary" style="border: none; border-radius: 0;">
+          <div class="container-fluid " style="height: 80px">
             <div class="navbar-header">
-              <a class="navbar-brand" href="#"><h1 style="color: #abdaf0;margin-right: 30px ;font-family:'Lobster';"> Knowledge Point </h1></a>
+              <a class="navbar-brand" href="#" style="text-shadow: 1px 1px 4px green;color: #abdaf0; font-size: 28px;margin-right: 30px ;font-family:'Lobster';"> Knowledge Point </a>
             </div>
             <ul class="nav navbar-nav ">
               <li class="active"><a href="{% if user.is_authenticated %}{% url 'index_page' %}{% else %}{% url 'home_page' %}{% endif %}">Home</a></li>
                 {% block upper_nav%}
 
                 {% endblock %}
-               <li><a href="{% url 'course_list' %}">Courses</a></li>
-               <li class = "dropdown">
-                  <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
-                     Catagory
-                     <span class="caret"></span>
-                  </a>                  
-                  <ul class = "dropdown-menu">
-                     <li class = "dropdown-submenu">
-                        <a href = "#" class = "test">
-                           Development
-                           <span class="caret"></span>
+              <li class = "dropdown">
+                <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+                    Catagory
+                    <span class="caret"></span>
+                </a>                  
+                <ul class = "dropdown-menu btn-primary">
+                    <li><a tabindex="-1" href="{% url 'course_list' %}#business">Business</a></li>
+                    <li><a tabindex="-1" href="{% url 'course_list' %}#it">IT & Software</a></li>     
+                    <li><a tabindex="-1" href="{% url 'course_list' %}#photography">Photography</a></li>
+                    <li><a tabindex="-1" href="{% url 'course_list' %}#health">Health & fitness</a></li>
+                    <li class = "dropdown-submenu">
+                        <a tabindex="-1" href = "#" class = "test">
+                                Development
+                          <span style="margin-left: 20px" class=" glyphicon glyphicon-menu-right"></span>
                         </a>                  
-                        <ul class = "dropdown-menu">                        
-                           <li><a href = "#">Business</a></li>
-                           <li><a href = "#">IT & Software</a></li>     
-                           <li><a href = "#">Photography</a></li>
-                           <li><a href = "#">Health & fitness</a></li>
-                           <li><a href = "#">Design</a></li>
-                           <li><a href = "#">Marketing</a></li>
-                           <li><a href = "#">Teacher training</a></li>
-                           <li><a href = "#">Langue</a></li>
+                        <ul class = "dropdown-menu btn-primary">                        
+                          <li><a href="{% url 'course_list' %}#android">Android</a></li>
+                          <li><a href="{% url 'course_list' %}#webdesign">Javascript</a></li>     
+                          <li><a href="{% url 'course_list' %}#webdesign">HTML</a></li>
+                          <li><a href="{% url 'course_list' %}#webdesign">Jquery</a></li>
+                          <li><a href="{% url 'course_list' %}#webdesign">AngularJS</a></li>
+                          <li><a href="{% url 'course_list' %}#ai">Artificial Intelligence</a></li>
+                          <li><a href="{% url 'course_list' %}#game">Game developing</a></li>
+                          <li><a href="{% url 'course_list' %}#robotics">Robotics</a></li>
                         </ul>
-                        
-                     </li>
-                     <li><a tabindex="-1" href = "#">Business</a></li>
-                     <li><a tabindex="-1" href = "#">IT & Software</a></li>     
-                     <li><a tabindex="-1" href = "#">Photography</a></li>
-                     <li><a tabindex="-1" href = "#">Health & fitness</a></li>
-                     <li><a tabindex="-1" href = "#">Design</a></li>
-                     <li><a tabindex="-1" href = "#">Marketing</a></li>
-                     <li><a tabindex="-1" href = "#">Teacher training</a></li>
-                     <li><a tabindex="-1" href = "#">Langue</a></li>
-                  </ul>
-                  
-               </li>
+                                
+                    </li>
+                    <li><a tabindex="-1" href="{% url 'course_list' %}#design">Design</a></li>
+                    <li><a tabindex="-1" href="{% url 'course_list' %}#machineLearning">Machine Learning</a></li>
+                    <li><a tabindex="-1" href="{% url 'course_list' %}#teaching">Teacher training</a></li>
+                    <li><a tabindex="-1" href="{% url 'course_list' %}#language">Programming Langues</a></li>
+                    <li><a tabindex="-1" href="{% url 'course_list' %}#network">Network & Security</a></li>
+                </ul>                          
+              </li>
             </ul>
  
             <ul class="nav navbar-nav navbar-right">
@@ -75,14 +76,14 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ user.profile.get_absolute_url }}"><span class="glyphicon glyphicon-user"></span>{{ user.get_username }}</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'logout'%}?next={% url 'home_page' %}"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li> 
               {% else %}
-                <li><a href="{% url 'user_create' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="{% url 'home_page' %}#join"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="{% url 'login'%}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
               {% endif %}
             </ul>
 
-            <form class="navbar-form navbar-right" role="search" style="height: 80%;padding: 25px 10px">
+            <form action="{% url 'course_search' %}" method="get" class="navbar-form navbar-right" role="search" style="height: 80%;padding: 15px 10px">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" id="search_box" name="search_box" class="form-control" placeholder="Search">
               </div>
               <button type="submit" style="color: #EFAD5E; width:50px; height:35px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-search"></span></button>
             </form>
@@ -115,6 +116,18 @@
 
 
   </div>
-     
+ 
+  <script>
+  $(".rating").rating({readonly: true, showClear: false, showCaption: false ,size: 'xs'});
+
+  $(document).ready(function(){
+    $('.dropdown-submenu a.test').on("mouseover", function(e){
+      $(this).next('ul').toggle();
+      e.stopPropagation();
+      e.preventDefault();
+    });
+  });
+  </script>
+      
 </body>
 </html>

@@ -11,7 +11,7 @@
 	    <br>
 	    <br>
 	    <div class="form-group">
-			<a href="{% if user.is_authenticated %}{% url 'index_page' %}{% else %}{% url 'home_page' %}{% endif %}"  style="float:right ;color:red"><span class="glyphicon glyphicon-remove btn btn-lg">close</span></a>
+			<a href="{% url 'home_page' %}"  style="float:right ;color:red"><span class="glyphicon glyphicon-remove btn btn-lg">close</span></a>
 		</div>
 		<br>
 		<div>

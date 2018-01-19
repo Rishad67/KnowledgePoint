@@ -41,11 +41,10 @@
 					<br>
 		    		<span>
 		    			<img src="{% if course.instructor.profile.photo %}{{course.instructor.profile.photo.url}}{% endif %}" alt="currently unavailable" class="img-thumbnail" style="float:left;width:40%;height:150px;">
-		    			<div style="color: white;"><h3>{{course.instructor.first_name}} {{course.instructor.last_name}}</h3>{{course.instructor.course_set.count}} courses & students</div>
+		    			<div style="color: white;"><h3>{{course.instructor.first_name}} {{course.instructor.last_name}}</h3>
+		    				<h3>{{course.instructor.course_set.count}} courses</h3>
+		    			</div>
 		    		</span>
-		    		<div>
-		    			{{course.instructor.description}}
-		    		</div>
 		    	</a>
 		    	<br>
 		    	<br>

@@ -10,7 +10,7 @@
 
 {% block content %}
 
-  <section>
+    <section>
     	
   		<div style="width:100%;">
 
@@ -41,11 +41,11 @@
   			<br>
   			<br>
      	</div>
-  </section>
+    </section>
 
-  <br>
+    <br>
 
-  <section id="join">
+    <section id="join">
     	<br>
     	<br>
   		<div style="width:100%;">			
@@ -53,7 +53,7 @@
 	  		<div class="row" style="padding:100px">
 	  			<h2 style="font-size: 60px">Join Now !</h2>
 	  			<div class="col-lg-4 col-md-4" style="padding:10px">
-	  				<a href="{% url 'instructor_create' %}" class="thumbnail box" style="height:450px;">
+	  				<a href="{% if perms.home.add_course %}{% url 'instructor_page' %}{% else %}{% url 'instructor_create' %}{% endif %}" class="thumbnail box" style="height:450px;">
 	  					<div class="row">
 	  						<div class="col-md-5">
 	  							<img src={% static 'img/instructor.jpg' %} class="thumbnail" alt="">
@@ -69,7 +69,7 @@
 		        	</a>	  				
 	  			</div>
 	  			<div class="col-lg-4 col-md-4" style="padding:10px">
-	  				<a href="{% url 'user_create' %}" class="thumbnail box" style="height:450px;">
+	  				<a href="{% if user.is_authenticated %}{% url 'student_page' %}{% else %}{% url 'user_create' %}{% endif %}" class="thumbnail box" style="height:450px;">
 	  					<div class="row">
 	  						<div class="col-md-5">
 	  							<img src={% static 'img/student.jpg' %} class="thumbnail" alt="">
@@ -85,7 +85,7 @@
 		        	</a>	  				
 	  			</div>
 	  			<div class="col-lg-4 col-md-4" style="padding:10px">
-	  				<a href="{% url 'user_create' %}" class="thumbnail box" style="height:450px;">
+	  				<a href="{% url 'course_list' %}" class="thumbnail box" style="height:450px;">
 	  					<div class="row">
 	  						<div class="col-md-5">
 	  							<img src={% static 'img/course.jpg' %} class="thumbnail" alt="">
@@ -121,13 +121,45 @@
   			</div>
   			<br>
      	</div>
-  </section>
+    </section>
+    <br>
+    <br>
 
-  <br>
+    <section id="Contract">
+    	
+  		<div style="width:100%">
+  			
+	  		<div class="row">
+	  			<h1>Explore and Learn</h1>
+	  			<br>
+	            <div class="col-md-offset-1 col-md-10 text-center">
+	              <h2 class="section-heading text-white">Sign up for getting latest updates</h2>
+	              <br>
+	              <br>
+	              <div class="row" style="padding: 50px 200px;">
+	              	<div class="col-md-6 col-lg-6"><a class="thumbnail box" href="{% url 'course_search' %}#top"><span  class="glyphicon glyphicon-star"></span>
+	              		<span  class="glyphicon glyphicon-star"></span>
+	              		<span  class="glyphicon glyphicon-star"></span>
+	              		<h2>Top rated</h2></a></div>
+	              	<div class="col-md-6 col-lg-6" ><a class="thumbnail box" href="{% url 'course_search' %}#new"><span class="glyphicon glyphicon-inbox"></span><h2>Recently added</h2></a></div>
+	              	<br>
+	              </div>
+	              <div class="row" style="padding: 50px 200px;">
 
-  <br>
+	              	<div class="col-md-6 col-lg-6" ><a class="thumbnail box" href="{% url 'user_forum' %}"><span class="glyphicon glyphicon-dashboard"></span><h2>User Forum</h2></a></div>
+	              	<div class="col-md-6 col-lg-6"><a class="thumbnail box" href="{% url 'course_list' %}"><span class="glyphicon glyphicon-book"></span><h2>All courses</h2></a></div>
+	              	<br>
+	              </div>
+	              <br>
+	            </div>
+	            <br>
+	        </div>
+     	</div>
+    </section>
+    <br>
+    <br>
 
-  <section id="About">
+    <section id="About">
     	
   		<div style="width:100%">
   			
@@ -159,42 +191,10 @@
 	            </div>
 	        </div>
      	</div>
-  </section>
-
-  <br>
-  <br>
-
-  <section id="Contract">
-    	
-  		<div style="width:100%">
-  			
-	  		<div class="row">
-	  			<h1>Explore and Learn</h1>
-	  			<br>
-	            <div class="col-md-offset-1 col-md-10 text-center">
-	              <h2 class="section-heading text-white">Sign up for getting latest updates</h2>
-	              <br>
-	              <br>
-	              <div class="row" style="padding: 50px 200px;">
-	              	<div class="col-md-6 col-lg-6"><a class="thumbnail box" href="{% url 'course_search' %}#top"><span  class="glyphicon glyphicon-star"></span>
-	              		<span  class="glyphicon glyphicon-star"></span>
-	              		<span  class="glyphicon glyphicon-star"></span>
-	              		<h2>Top rated</h2></a></div>
-	              	<div class="col-md-6 col-lg-6" ><a class="thumbnail box" href="{% url 'course_search' %}#new"><span class="glyphicon glyphicon-inbox"></span><h2>Recently added</h2></a></div>
-	              	<br>
-	              </div>
-	              <div class="row" style="padding: 50px 200px;">
-
-	              	<div class="col-md-6 col-lg-6" ><a class="thumbnail box" href="{% url 'user_forum' %}"><span class="glyphicon glyphicon-dashboard"></span><h2>User Forum</h2></a></div>
-	              	<div class="col-md-6 col-lg-6"><a class="thumbnail box" href="{% url 'course_list' %}"><span class="glyphicon glyphicon-book"></span><h2>All courses</h2></a></div>
-	              	<br>
-	              </div>
-	              <br>
-	            </div>
-	            <br>
-	        </div>
-     	</div>
     </section>
+
+  <br>
+  <br>
 
 <!-- <p class="text-muted"> You have visited this page {{num_visits}} {% if num_visits == 1 %}time{% else %}times.{% endif %}</p> -->
 

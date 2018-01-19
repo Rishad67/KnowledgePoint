@@ -6,7 +6,6 @@ urlpatterns = [
     url(r'^$', views.homePage, name='home_page'),
 ]
 urlpatterns += [ 
-    url(r'^index/$', views.indexPage, name='index_page'),
     url(r'^user/create/student$', views.UserCreate.as_view(), name='user_create'), 
     url(r'^user/create/instructor$', views.InstructorCreate.as_view(), name='instructor_create'),
     url(r'^user/(?P<pk>\d+)$', views.UserDetailView.as_view(), name='user_detail'),
@@ -18,6 +17,7 @@ urlpatterns += [
     url(r'^course/(?P<pk>\d+)$', views.CourseDetailView.as_view(), name='course_detail'),
     url(r'^course/create/$', views.CourseCreate.as_view(), name='course_create'),
     url(r'^course/(?P<pk>\d+)/update/$', views.CourseUpdate.as_view(), name='course_update'),
+    url(r'^course/(?P<pk>\d+)/rating/$', views.incRating, name='course_rating'),
     url(r'^course/(?P<pk>\d+)/register/$', views.registerCourse, name='course_registration'),
     url(r'^course/(?P<pk>\d+)/launch/$', views.launchCourse, name='course_launch'),
     url(r'^course/search/$', views.courseSearch, name='course_search'),

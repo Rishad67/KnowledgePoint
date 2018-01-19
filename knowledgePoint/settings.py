@@ -139,6 +139,6 @@ COUNTRIES_FLAG_URL = 'flags/{code}.gif'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'knowledgePoint/media')
 
-LOGIN_REDIRECT_URL = '/home/index/'
+LOGIN_REDIRECT_URL = '/home/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"course",
+				"course_list"
+			],
+			[
 				"us",
 				"user"
 			],
@@ -196,10 +200,6 @@
 				"img-thumbnail"
 			],
 			[
-				"course",
-				"course_id"
-			],
-			[
 				"get",
 				"get_success_url"
 			],
@@ -327,25 +327,25 @@
 			"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/urls.py",
 			"settings":
 			{
-				"buffer_size": 2446,
+				"buffer_size": 2469,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "user_forum.html",
+			"file": "course/course_detail.html",
 			"settings":
 			{
-				"buffer_size": 21772,
+				"buffer_size": 3654,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "homePage.html",
+			"file": "course/lesson_detail.html",
 			"settings":
 			{
-				"buffer_size": 9346,
+				"buffer_size": 2582,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -354,7 +354,16 @@
 			"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/models.py",
 			"settings":
 			{
-				"buffer_size": 5029,
+				"buffer_size": 5019,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css/mycss.css",
+			"settings":
+			{
+				"buffer_size": 1783,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -363,16 +372,7 @@
 			"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
 			"settings":
 			{
-				"buffer_size": 12894,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "studentPage.html",
-			"settings":
-			{
-				"buffer_size": 3819,
+				"buffer_size": 12722,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -441,32 +441,40 @@
 	[
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course"
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/knowledgePoint",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/templates/registration"
 	],
 	"file_history":
 	[
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
+		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/author_list.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/models.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/user_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/studentPage.html",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/about_instructor.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/user_detail.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/user_forum.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/homePage.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/base_generic.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/knowledgePoint/settings.py",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/instructorPage.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/instructor_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/profile_form.html",
+		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/course_list.html",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/urls.py",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/user_forum.html",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css/mycss.css",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/studentPage.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/instructorPage.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/models.py",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/forms.py",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/course_form.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/base_generic.html",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/search_result.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/homePage.html",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/course_detail.html",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/course/lesson_detail.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/profile_form.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/user_detail.html",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/indexPage.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/instructor_form.html",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/templates/profile/user_form.html",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/test.html",
 		"/C/Users/user/Desktop/test.html",
 		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/js/star-rating.min.js",
@@ -498,7 +506,6 @@
 		"/E/Level-3,Term-2/Computer Network Sessional (322)/1405067/topology.txt",
 		"/E/Level-3,Term-2/Computer Network Sessional (322)/NetworkLayerTemplate/NetworkLayer/topology.txt",
 		"/E/Level-3,Term-2/Computer Network Sessional (322)/NetworkLayerTemplate/NetworkLayer/topologyPre.txt",
-		"/C/Users/user/Desktop/Network/django-env/knowledgePoint/knowledgePoint/settings.py",
 		"/C/Users/user/Downloads/NetworkLayer/NetworkLayer/src/networklayer/ServerThread.java",
 		"/E/Level-3,Term-2/Computer Network Sessional (322)/NetworkLayerTemplate/NetworkLayer/src/networklayer/Client.java",
 		"/C/Users/user/Downloads/NetworkLayer/NetworkLayer/src/networklayer/NetworkLayerServer.java",
@@ -549,7 +556,6 @@
 		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/phonenumbers/phonenumber.py",
 		"/C/Users/user/Desktop/Network/django-env/Lib/site-packages/phonenumbers/prefix.py",
 		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/book_detail.html",
-		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/templates/catalog/author_list.html",
 		"/C/Users/user/Desktop/Network/django-env/locallibrary/catalog/urls.py",
 		"/C/Users/user/Desktop/Network/django-env/Scripts/pip3.exe",
 		"/C/Users/user/Desktop/Network/django-env/Scripts/pilfile.py",
@@ -569,7 +575,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 52.0
 	},
 	"find_in_files":
 	{
@@ -583,6 +589,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"index",
+			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:300px;\">",
+			"index_page",
+			"aboutInstructor",
 			"course_detail",
 			"-md-1 text-success\" href=\"#replies{{comment.pk}}\" data-toggle=\"collapse\">Reply",
 			"<a class=\"col-md-1\" href=\"#replies{{comment.pk}}\" data-toggle=\"collapse\">Reply",
@@ -619,6 +629,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:350px;\">",
 			"<a class=\"col-md-1 text-danger\" href=\"#replies{{comment.pk}}\" data-toggle=\"collapse\">Reply",
 			"<a class=\"col-md-1 text-success\" href=\"#replies{{comment.pk}}\" data-toggle=\"collapse\">Reply",
 			"<a href=\"{% url 'course_detail' course.pk %}\" class=\"thumbnail box\" style=\"height:315px;\">",
@@ -644,7 +655,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -653,15 +664,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2446,
+						"buffer_size": 2469,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								634,
-								634
+								1185,
+								1185
 							]
 						],
 						"settings":
@@ -671,27 +682,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 150.0,
+						"translation.y": 121.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "user_forum.html",
+					"file": "course/course_detail.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 21772,
+						"buffer_size": 3654,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14666,
-								14666
+								2592,
+								2592
 							]
 						],
 						"settings":
@@ -700,38 +711,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 8550.0,
+						"translation.y": 1575.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "homePage.html",
+					"file": "course/lesson_detail.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9346,
+						"buffer_size": 2582,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								258,
-								204
+								223,
+								223
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -740,15 +752,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5029,
+						"buffer_size": 5019,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3790,
-								3790
+								2259,
+								2259
 							]
 						],
 						"settings":
@@ -757,27 +769,56 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2025.0,
+						"translation.y": 975.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
+					"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/static/css/mycss.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12894,
+						"buffer_size": 1783,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1960,
-								1960
+								1536,
+								1536
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1725.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/user/Desktop/Network/django-env/knowledgePoint/home/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12722,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7507,
+								7507
 							]
 						],
 						"settings":
@@ -787,39 +828,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 825.0,
+						"translation.y": 4650.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "studentPage.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3819,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1959,
-								1959
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1750.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -967,7 +979,7 @@
 	"project": "homePage.sublime-project",
 	"replace":
 	{
-		"height": 65.0
+		"height": 93.0
 	},
 	"save_all_on_build": true,
 	"select_file":

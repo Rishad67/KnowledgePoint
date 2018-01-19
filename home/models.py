@@ -23,7 +23,7 @@ class Profile(models.Model):
 	photo = models.ImageField(upload_to='Profile',null=True,blank=True,width_field="width_field",height_field="height_field")
 	height_field = models.IntegerField(default=0)
 	width_field = models.IntegerField(default=0)
-	follower = models.ManyToManyField(User,related_name='follower')
+	follower = models.ManyToManyField(User,related_name='followed')
 	
 
 
@@ -47,7 +47,7 @@ class Course(models.Model):
 	instructor = models.ForeignKey(User,on_delete=models.CASCADE)
 	motivation = models.TextField(max_length=1000, help_text="Enter a brief description about the course")
 	keywards = models.TextField(max_length=200, help_text="Enter some keywards of course",null=True)
-	rating = models.PositiveIntegerField(default=0,null=True)
+	rating = models.FloatField(default=0,null=True)
 	catagory = models.CharField(max_length=2,choices=CATAGORY,blank=True)
 	last_update = models.DateField(auto_now=True)
 	active = models.BooleanField(default=False)

@@ -67,7 +67,8 @@
 		  		<br>
 		  		<br>
 		        <div class="row">
-					{% for course in user.course_set.all %}
+					{% for profile in user.followed.all %}
+					{% for course in profile.user.course_set.all %}
 					<div class="col-md-3 col-sm-4" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:350px;">
 			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
@@ -85,6 +86,7 @@
 				        </a>
 				        <br>
 			        </div>
+			        {% endfor %}
 					{% endfor %}
 		        </div>
 	     	</div>
@@ -94,6 +96,27 @@
 	    <section>
 		  	<div>
 		  		<h1 style="	text-shadow: 1px 1px 4px black;">People you may follow</h1>
+		  		<br>
+		  		<br>
+		        <div class="row">
+					{% for profile in user.followed.all %}
+					<div class="col-md-3 col-sm-4" style="margin:10px;">
+			  			<a href="{% url 'about_instructor' profile.user.pk %}" class="thumbnail box" style="height:350px;">
+			  				<img src="{% if entry.instructor.Profile.photo %}{{ entry.instructor.Profile.photo.url }}{% endif %}" alt="">
+					        <div  class="caption">
+					            <h2>{{profile.user.first_name}} {{profile.user.last_name}}</h2>
+						    	<div style="text-align: center">
+
+						    	</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{profile.follower.count}} students registered</div>
+						    	<br>
+						    	<br>
+					        </div>
+				        </a>
+				        <br>
+			        </div>
+			        {% endfor %}
+		        </div>
 		        <div>
 		        </div>
 	     	</div>

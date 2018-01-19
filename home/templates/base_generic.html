@@ -31,7 +31,7 @@
               <a class="navbar-brand" href="#" style="text-shadow: 1px 1px 4px green;color: #abdaf0; font-size: 28px;margin-right: 30px ;font-family:'Lobster';"> Knowledge Point </a>
             </div>
             <ul class="nav navbar-nav ">
-              <li class="active"><a href="{% if user.is_authenticated %}{% url 'index_page' %}{% else %}{% url 'home_page' %}{% endif %}">Home</a></li>
+              <li class="active"><a href="{% url 'home_page' %}">Home</a></li>
                 {% block upper_nav%}
 
                 {% endblock %}

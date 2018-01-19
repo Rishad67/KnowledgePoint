@@ -30,13 +30,6 @@ def homePage(request):
     )
 
 @login_required
-def indexPage(request):
-    if request.user.has_perm('home.add_course'):
-        return render(request,'indexPage.html')
-    else:
-        return render(request,'studentPage.html')
-
-@login_required
 def studentPage(request):
     return render(request,'studentPage.html')
 
@@ -76,7 +69,7 @@ class ProfileUpdate(PermissionRequiredMixin,UpdateView):
         profile.user.save()
         profile.save()
 
-        return HttpResponseRedirect(reverse('index_page') )
+        return HttpResponseRedirect(reverse('user_detail',args=(profile.pk,)))
 
 
 class UserCreate(CreateView):
@@ -205,7 +198,7 @@ def incRating(request,pk):
     if raw_data: 
         course = Course.objects.get(pk=pk)
         prev = course.rating
-        new = raw_data*0.5+prev*0.5
+        new = float(raw_data)*0.5+prev*0.5
         course.rating = new
         course.save()
 

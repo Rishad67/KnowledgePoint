@@ -55,10 +55,10 @@
 		  		<br>
 		  		<br>
 		        <div class="row">
-					{% for course in user.course_set.all %}
+					{% for course in instructor.course_set.all %}
 					{% if course.active %}
 					<div class="col-md-3 col-sm-4" style="margin:10px;">
-			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:300px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:350px;">
 			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
 					        <div  class="caption">
 					            <h2>{{course.title}}</h2>

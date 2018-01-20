@@ -8,10 +8,11 @@
      <section id="it">    	
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 60px">IT and Software</h1>
+	  			<h1 class="heading" style="font-size: 40px">IT and Software</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+		        {% if it %}
 					{% for course in it.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -31,6 +32,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -40,10 +61,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 60px">Networking and Security</h1>
+	  			<h1 class="heading" style="font-size: 40px">Networking and Security</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if network %}
 					{% for course in network.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -63,6 +85,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -72,10 +114,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1  class="heading" style="font-size: 60px">Photography</h1>
+	  			<h1  class="heading" style="font-size: 40px">Photography</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if photography %}
 					{% for course in photography.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -95,6 +138,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -104,10 +167,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 60px">Health and Fitness</h1>
+	  			<h1 class="heading" style="font-size: 40px">Health and Fitness</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if health %}
 					{% for course in health.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -127,6 +191,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -136,10 +220,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 60px">Android Development</h1>
+	  			<h1 class="heading" style="font-size: 40px">Android Development</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if android %}
 					{% for course in android.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -159,6 +244,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -172,6 +277,7 @@
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if web %}
 					{% for course in web.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -191,6 +297,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -200,10 +326,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 60px">Artificial Intelligence</h1>
+	  			<h1 class="heading" style="font-size: 40px">Artificial Intelligence</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if ai %}
 					{% for course in ai.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -223,6 +350,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -232,10 +379,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 60px">Game Development</h1>
+	  			<h1 class="heading" style="font-size: 40px">Game Development</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if gaming %}	
 					{% for course in gameing.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -255,6 +403,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -264,10 +432,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 60px">Robotics</h1>
+	  			<h1 class="heading" style="font-size: 40px">Robotics</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if robotics %}
 					{% for course in robotics.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -287,6 +456,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -296,10 +485,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 50px">Basic and Advanced Design technicque</h1>
+	  			<h1 class="heading" style="font-size: 40px">Basic and Advanced Design technicque</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if design %}
 					{% for course in design.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -319,6 +509,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -328,10 +538,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 60px">Machine Learning</h1>
+	  			<h1 class="heading" style="font-size: 40px">Machine Learning</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if machine %}
 					{% for course in machine.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -351,6 +562,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -360,10 +591,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 60px">Teaching training</h1>
+	  			<h1 class="heading" style="font-size: 40px">Teaching training</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if teaching %}
 					{% for course in teaching.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -383,6 +615,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -392,10 +644,11 @@
      	<br><br><br>
      	<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 60px">Programming Languages </h1>
+	  			<h1 class="heading" style="font-size: 40px">Programming Languages </h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if programming %}
 					{% for course in programming.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -415,6 +668,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -428,6 +701,7 @@
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if business %}
 					{% for course in business.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -447,6 +721,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>
@@ -456,10 +750,11 @@
 		<br><br><br>
   		<div style="width:100%;height: 100%">
 	  		<div class="row">
-	  			<h1 class="heading" style="font-size: 50px">Miscellenous courses</h1>
+	  			<h1 class="heading" style="font-size: 40px">Miscellenous courses</h1>
 		  		<br>
 		  		<br>
 		        <div class="row" <div class="row" <div class="row" style="margin:10px 20px;padding:20px;">
+				{% if others %}
 					{% for course in others.all %}
 					<div class="col-lg-2" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:320px;">
@@ -479,6 +774,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course in this catagory</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}
 		        </div>
 	        </div>
      	</div>

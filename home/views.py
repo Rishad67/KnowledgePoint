@@ -31,11 +31,22 @@ def homePage(request):
 
 @login_required
 def studentPage(request):
-    return render(request,'studentPage.html')
+    registrations = Registration.objects.filter(student=request.user)
+    registeredCourses = Course.objects.filter(registration__in=registrations)
+    followedProfile = Profile.objects.filter(follower=request.user)
+    followed = User.objects.filter(profile__in=followedProfile)
+    likedCourse = Course.objects.exclude(registration__in=registrations).exclude(instructor__exact=request.user).exclude(active__exact=False).order_by('rating').reverse()[:8];
+
+    context = {'registrations':registrations,'followed':followed,'registeredCourses':registeredCourses}
+    return render(request,'studentPage.html',context=context)
 
 @login_required
 def instructorPage(request):
-    return render(request,'instructorPage.html')
+    activeCourses = Course.objects.filter(active=True)
+    inActiveCourses = Course.objects.filter(active=False)
+    requested = Course_request.objects.filter(instructor=request.user)
+    context={'activeCourses':activeCourses,'inActiveCourses':inActiveCourses,'requested':requested}
+    return render(request,'instructorPage.html',context=context)
 
 @login_required
 def registerCourse(request,pk):
@@ -204,6 +215,15 @@ def incRating(request,pk):
 
     return HttpResponseRedirect(reverse('student_page'))
 
+def courseRequest(request,pk):
+    raw_data = request.GET.get('request_box', None)
+    if raw_data:
+        instructor = User.objects.get(pk=pk)
+        topic = raw_data 
+        req = Course_request.objects.create(instructor=instructor,topic=topic,student=request.user)
+
+    return HttpResponseRedirect(reverse('about_instructor',args=(instructor.pk,)))
+
 class CourseDetailView(generic.DetailView):
     model = Course
     template_name = 'course/course_detail.html'
@@ -269,12 +289,16 @@ class LessonDetailView(PermissionRequiredMixin,generic.DetailView):
 
 
 def userForum(request):
-    blog = Post.objects.exclude(user=request.user);
+    blog =  Post.objects.all()
+    m=None
+    if request.user.is_authenticated():
+        blog = Post.objects.exclude(user=request.user);
+        m = Post.objects.filter(user=request.user)
     p = blog.filter(post_type='p');
     i = blog.filter(post_type='i');
     s = blog.filter(post_type='s');
     c = blog.filter(post_type='c');
-    m = Post.objects.filter(user=request.user) 
+ 
     context={'p':p ,'i':i ,'s':s ,'c':c,'m':m} 
     return render(request,'user_forum.html',context=context)
 

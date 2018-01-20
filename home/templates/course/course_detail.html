@@ -1,66 +1,45 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<div class="container-fluid" style="height: 100%">
-	<div class="row">
 
-		<div class="col-lg-offset-11 col-sm-1">
-			<a href="{% if user.is_authenticated %}{% url 'student_page' %}{% else %}{% url 'home_page' %}{% endif %}"  style="color:red"><span class="glyphicon glyphicon-remove btn btn-lg">close</span></a>
-		</div>
-	</div>
-	<div class="row" style="padding-top: 20px;">
-		<div class="col-lg-offset-1 col-lg-4">
-		    	<div class="row">
-		    		<div class="col-lg-6"><h1>Lessons :</h1></div>
-		    		<br>
-		    		{% load guardian_tags %}
-		    		{% get_obj_perms request.user for course as "course_perms" %}
-		    		{% if "change_course" in course_perms %}
-		    		<div class="col-lg-offset-2 col-lg-4">	    		
-		    			<a href="{% url 'lesson_create' %}" class="btn btn-success" style="width:150px;"><span class="glyphicon glyphicon-plus"></span> Add Lesson</a>
-		    		</div>
-		    		{% endif %}
+<div class="row">
+
+    <div class="col-md-3 heading" style="height: 100% " ">
+		        {% load guardian_tags %}
+		    	{% get_obj_perms request.user for course as "course_perms" %}
+		    	{% if "change_course" in course_perms %}
+		    	<div style="font-size: 30px;font-weight: bold;">	    		
+		    		<a href="{% url 'lesson_create' %}" style="height:70px;">
+		    		<div class="box text-success"><span class="glyphicon glyphicon-plus"></span>Add Lesson</div></a>
 		    	</div>
+		    	{% endif %}
+		    	<br>	
+		    	<br>	    	
+		    	<div ><h1>Lessons :</h1></div>
 		    	<br>
-		    	<br>
-		    	<div class="row">
+		    	<div style="font-size: 18px">
 			    	{% for lesson in course.lesson_set.all %}
 			    	<div>
-					<a href="{% url 'lesson_detail' lesson.pk %}" class="thumbnail box" style="height:70px;"><h3>{{lesson.topic}}</h3></a>
+					<a href="{% url 'lesson_detail' lesson.pk %}" style="height:70px;"><div class="box">{{lesson.topic}}</div></a>
 					<br>
 					</div>
 		    		{% endfor %}	
 		    	</div>
 		    	<br>
-
-		        
-		    	<a href="{% url 'about_instructor' course.instructor.pk %}" class="thumbnail box">		    	
-		    	    <div class="row">
-		    			<h1>About instructor:</h1>
-		    		</div>
-					<br>
-		    		<span>
-		    			<img src="{% if course.instructor.profile.photo %}{{course.instructor.profile.photo.url}}{% endif %}" alt="currently unavailable" class="img-thumbnail" style="float:left;width:40%;height:150px;">
-		    			<div style="color: white;"><h3>{{course.instructor.first_name}} {{course.instructor.last_name}}</h3>
-		    				<h3>{{course.instructor.course_set.count}} courses</h3>
-		    			</div>
-		    		</span>
-		    	</a>
 		    	<br>
 		    	<br>
-		    	<br>		
-		</div>
-
-		<div class="col-lg-offset-1 col-lg-5" >
-
 		    	<br>
-		    	<div class="row">
-		    		<h1>{{course.title}}</h1> 
-		    	</div>
+    </div>
+
+    <div class="col-md-9" style="padding: 50px 150px">
+	  	<section>
+	    	<div>
+		  		<h1 style="	text-shadow: 1px 1px 4px black;">{{course.title}}</h1>
+		  		<br>
 		    	<br>
 		    	<div class="row">
 		    		{% if course.cover_photo %}
-		    		<img class="img-thumbnail" src="{{course.cover_photo.url}}" alt="" style="float:left;width:35%;height:120px;margin:0 10 10 0px ">
+		    		<img class="img-thumbnail" src="{{course.cover_photo.url}}" alt="" style="float:left;width:25%;height:120px;margin:0 10 10 0px ">
 		    		{% endif %}
 		    		<span> {{course.motivation}}</span>
 		    	</div>
@@ -78,35 +57,68 @@
 		    	</div>
 		    	<br>
 				<br>
+		    	<br>		    	
 		    	<br>
-		    	<br>
-
+	     	</div>
+	    </section>
+		<br>
+		<br>
+	  	<section>	  			
+		  	<div>				
 		    	{% if "change_course" in course_perms %}
-		    	<div class="col-sm-offset-1 col-sm-4">
-		       		<a href="{% url 'course_update' course.pk %}" class="btn btn-primary btn-lg " style="width:120px;">Edit</a>	
-		    	</div>
-			    	{% if not course.active %}
-			    <div class="col-sm-offset-2 col-sm-5">
-			       		<a href="{% url 'course_launch' course.pk %}" class="btn btn-primary btn-lg " style="width:120px;">Launch</a>	
+		    	<h1 style="	text-shadow: 1px 1px 4px black;">Actions</h1>
+		    	<br>
+		    	<div class="row">
+			    	<div class="col-md-6">
+			       		<a href="{% url 'course_update' course.pk %}" class="box thumbnail" style="height: 300px">
+			       		<h2>Edit</h2>
+			       		<h3>Modify your course with update contents and add more contents.Enrich your course with advanced materials</h3>
+			       		</a>	
+			    	</div>
+				    {% if not course.active %}
+				    <div class="col-md-6">
+				       		<a href="{% url 'course_launch' course.pk %}" class="box thumbnail" style="height: 300px">
+				       		<h2>Launch</h2>
+				       		<h3>If you think your course creation and modifications complete,you can launch the course as public.Then everyone can find your course and register</h3>
+				       		</a>	
+				    </div>
+				    {% endif %}
 			    </div>
-			    	{% endif %}
 		    	{% else %}
+		    	<h1 style="	text-shadow: 1px 1px 4px black;">Abouts</h1>
+		    	<br>
+		    	<div class="row">
+		    		<div class="col-md-6">
+		    			<a href="{% url 'about_instructor' course.instructor.pk %}" class="thumbnail box" style="height: 300px">		    
+		    				<h1>About instructor:</h1>
+		    				<div class="row">
+		    					<div class="col-md-4">
+		    						<img src="{% if course.instructor.profile.photo %}{{course.instructor.profile.photo.url}}{% endif %}" alt="currently unavailable" class="img-thumbnail" style="width:100%;height:100px;">
+		    					</div>
+		    					<div class="col-md-8">
+		    						<h3>{{course.instructor.first_name}} {{course.instructor.last_name}} <br> {{course.instructor.course_set.count}} courses</h3>
+		    					</div>
+		    				</div>
+		    				<h3>see instructors profile and offered courses. </h3>
+		    			</a>
+		    		</div>
 			    	{% if course.active and enroll %}
-			    	<div class="col-sm-offset-4 col-sm-5">
-			       		<a href="{% url 'course_registration' course.pk %}" class="btn btn-success btn-lg " style="width:150px;">Enroll now</a>	
+			    	<div class="col-md-6">
+				       	<a href="{% url 'course_registration' course.pk %}" class="box thumbnail" style="height: 300px">
+				       		<h2>Enroll now</h2>
+				       		<h3>To see the lessons and other contents of the course,register and enroll yourself as a student.Get a full free lifetime access to the course materials.</h3>
+				       	</a>	
 			    	</div>
 			    	{% endif %}
+			    </div>
 		    	{% endif %}
-
-
-
-		    </div>
-		            
-
-		    
-
-		</div>
-
+		  		<br>
+	     	</div>
+	    </section>
+		<br>
+		<br>
 	</div>
 </div>
+
 {% endblock %}
+

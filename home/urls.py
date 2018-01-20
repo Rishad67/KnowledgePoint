@@ -20,6 +20,7 @@ urlpatterns += [
     url(r'^course/(?P<pk>\d+)/rating/$', views.incRating, name='course_rating'),
     url(r'^course/(?P<pk>\d+)/register/$', views.registerCourse, name='course_registration'),
     url(r'^course/(?P<pk>\d+)/launch/$', views.launchCourse, name='course_launch'),
+    url(r'^course/request/instructor=(?P<pk>\d+)$', views.courseRequest, name='course_request'),    
     url(r'^course/search/$', views.courseSearch, name='course_search'),
     url(r'^course/$', views.courseList, name='course_list'),
     url(r'^lesson/(?P<pk>\d+)$', views.LessonDetailView.as_view(), name='lesson_detail'),

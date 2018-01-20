@@ -68,12 +68,13 @@
                     <li><a tabindex="-1" href="{% url 'course_list' %}#language">Programming Langues</a></li>
                     <li><a tabindex="-1" href="{% url 'course_list' %}#network">Network & Security</a></li>
                 </ul>                          
+                <li><a href="{% url 'user_forum' %}">Forum</a></li>
               </li>
             </ul>
  
             <ul class="nav navbar-nav navbar-right">
               {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ user.profile.get_absolute_url }}"><span class="glyphicon glyphicon-user"></span>{{ user.get_username }}</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'student_page' %}"><span class="glyphicon glyphicon-user"></span>{{ user.get_username }}</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'logout'%}?next={% url 'home_page' %}"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li> 
               {% else %}
                 <li><a href="{% url 'home_page' %}#join"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block upper_nav%}
-<li><a href="{% url 'user_forum' %}">Blog</a></li>
+
 {% endblock %}
 
 
@@ -19,6 +19,19 @@
             <div class="col-md-5" >
             	<div style="font-size: 60px;color:#abcdef">{{instructor.first_name}} {{instructor.last_name}}</div>
             	<div>{{instructor.profile.description}}</div>
+            </div>
+            <div class="col-md-3">
+                <div class="box thumbnail" style="height: 300px">
+                  <h2>Send for a course request</h2>
+                  <form action="{% url 'course_request' instructor.pk %}" method="get" style="height: 80%;padding: 15px 10px">
+                    <div class="form-group">
+                      <input type="text" id="request_box" name="request_box" class="form-control" placeholder="Course Topic">
+                    </div>
+                    <button type="submit" style="float: right;color: #EFAD5E; height:40px; background: #123456;border:1px solid #EFAD5E; " class="btn"><span class="glyphicon glyphicon-send"></span>
+                      send
+                    </button>
+                  </form>
+                </div>  
             </div>
             <br>
         </div>

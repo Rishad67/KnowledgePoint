@@ -28,15 +28,14 @@
 		<br>
 	</div>	
 
-    <div class="col-md-9">
-	  	<section>
+    <div class="col-md-10">
 	    	<div>
 		  		<h1 style="	text-shadow: 1px 1px 4px black;"> My offered active courses</h1>
 		  		<br>
 		  		<br>
 		        <div class="row">
-					{% for course in user.course_set.all %}
-					{% if course.active %}
+		        {% if activeCourses %}
+					{% for course in activeCourses.all %}
 					<div class="col-md-3 col-sm-4" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:350px;">
 			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
@@ -54,21 +53,38 @@
 				        </a>
 				        <br>
 			        </div>
-			        {% endif %}	
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No complete course that you offered</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}					
 		        </div>
 	     	</div>
-	    </section>
 		<br>
-		<br>
-	  	<section>	  			
+		<br>  			
 		  	<div>
+		        {% if inActiveCourses %}
 		  		<h1 style="	text-shadow: 1px 1px 4px black;">Courses to complete</h1>
 		  		<br>
 		  		<br>
 		        <div class="row">
-					{% for course in user.course_set.all %}
-					{% if not course.active %}
+					{% for course in inActiveCourses.all %}
 					<div class="col-md-3 col-sm-4" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:350px;">
 			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
@@ -78,20 +94,24 @@
 				        </a>
 				        <br>
 			        </div>
-			        {% endif %}	
 					{% endfor %}
+				{% endif %}	
 		        </div>
 	     	</div>
-	    </section>
 		<br>
 		<br>
-	    <section>
 		  	<div>
 		  		<h1 style="	text-shadow: 1px 1px 4px black;">Requested course topic</h1>
 		        <div>
+	              <div class="row" style="padding: 50px 200px;">
+					{% for req in requested.all %}
+	              	<div class="col-md-3 col-lg-3 thumbnail btn-success" style="padding:20px;margin: 20px;" ><span class="glyphicon glyphicon-dashboard"></span><h3>{{req.topic}}</h3>--by {{req.student.first_name}} {{req.student.last_name}}</div>
+	              	{% endfor %}
+
+	              	<br>
+	              </div>
 		        </div>
 	     	</div>
-	    </section>
 	</div>
 </div>
 

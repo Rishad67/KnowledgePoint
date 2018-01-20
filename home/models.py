@@ -98,7 +98,8 @@ class Registration(models.Model):
 	current_lesson=models.ForeignKey(Lesson,on_delete=models.CASCADE)
 
 class Course_request(models.Model):
-	instructor = models.ForeignKey(User,on_delete=models.CASCADE)
+	instructor = models.ForeignKey(User,on_delete=models.CASCADE,related_name='instructor')
+	student = models.ForeignKey(User,on_delete=models.CASCADE,related_name='student')
 	topic = models.CharField(max_length=100)
 
 

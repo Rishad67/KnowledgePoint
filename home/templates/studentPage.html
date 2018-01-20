@@ -30,25 +30,26 @@
             <br>
     </div>
 
-    <div class="col-md-10" style="padding: 10px">
+    <div class="col-md-9" style="padding: 10px">
 	  	<section>
 	    	<div>
 		  		<h1 style="	text-shadow: 1px 1px 4px black;">My current courses</h1>
 		  		<br>
 		  		<br>
 		        <div class="row">
-					{% for registration in user.registration_set.all %}
+		        {% if registeredCourses %}
+					{% for course in registeredCourses.all %}
 					<div class="col-md-3 col-sm-4" style="margin:10px;">
-			  			<a href="{% url 'course_detail' registration.course.pk %}" class="thumbnail box" style="height:350px;">
+			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:350px;">
 			  				<img src="{% if registration.course.cover_photo %}{{ registration.course.cover_photo.url }}{% endif %}" alt="">
 					        <div  class="caption">
-					            <h2>{{registration.course.title}}</h2>
+					            <h2>{{course.title}}</h2>
 						    	<div style="text-align: center">
 						    		<span>
-						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{registration.course.rating}}>
+						    			<input id="input-1" name="input-1" class="rating" data-min="0" data-max="5" data-step="0.1" value={{course.rating}}>
 						    		</span>
 						    	</div>
-						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{registration.course.registration_set.count}} students registered</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{course.registration_set.count}} students registered</div>
 						    	<br>
 						    	<br>
 					        </div>
@@ -56,6 +57,26 @@
 				        <br>
 			        </div>
 					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course is Registered</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}					
 		        </div>
 	     	</div>
 	    </section>
@@ -67,8 +88,8 @@
 		  		<br>
 		  		<br>
 		        <div class="row">
-					{% for profile in user.followed.all %}
-					{% for course in profile.user.course_set.all %}
+		        {% if likedCourse %}
+					{% for course in likedCourse.all %}
 					<div class="col-md-3 col-sm-4" style="margin:10px;">
 			  			<a href="{% url 'course_detail' course.pk %}" class="thumbnail box" style="height:350px;">
 			  				<img src="{% if course.cover_photo %}{{ course.cover_photo.url }}{% endif %}" alt="">
@@ -87,7 +108,26 @@
 				        <br>
 			        </div>
 			        {% endfor %}
-					{% endfor %}
+				{% else %}
+					<div class="thumbnail" style="background: rgba(204, 255, 204,0.7);width: 70%;margin: auto;border: 
+		  			2px solid black; ">
+		  				<br>
+		  				<br>
+		  				<div class="row"  style="padding: 50px;">
+		  					<div class="col-md-3">
+		  						<span style="margin: auto; font-size: 200px;" class="glyphicon glyphicon-grain"></span>
+		  				    </div>
+		  					<div class="col-md-9">  						
+								<div style="font-family: 'Lobstar'; font-size: 60px;font-weight: bold;color:black">No course suggestion Found</div>
+								<br>
+								<br>
+								<br>
+		  					</div>
+		  					<br>
+		  				</div>  
+		  				<br>				
+		  			</div>
+				{% endif %}			    
 		        </div>
 	     	</div>
 	    </section>
@@ -95,20 +135,21 @@
 		<br>
 	    <section>
 		  	<div>
-		  		<h1 style="	text-shadow: 1px 1px 4px black;">People you may follow</h1>
+		  		{% if followed %}
+		  		<h1 style="	text-shadow: 1px 1px 4px black;">People you follow</h1>
 		  		<br>
 		  		<br>
 		        <div class="row">
-					{% for profile in user.followed.all %}
+					{% for person in followed.all %}
 					<div class="col-md-3 col-sm-4" style="margin:10px;">
-			  			<a href="{% url 'about_instructor' profile.user.pk %}" class="thumbnail box" style="height:350px;">
+			  			<a href="{% url 'about_instructor' person.pk %}" class="thumbnail box" style="height:350px;">
 			  				<img src="{% if entry.instructor.Profile.photo %}{{ entry.instructor.Profile.photo.url }}{% endif %}" alt="">
 					        <div  class="caption">
-					            <h2>{{profile.user.first_name}} {{profile.user.last_name}}</h2>
+					            <h2>{{person.first_name}} {{person.last_name}}</h2>
 						    	<div style="text-align: center">
 
 						    	</div>
-						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{profile.follower.count}} students registered</div>
+						    	<div class="row text-success" style="font-weight: bold;text-align:center;font-size: 18px; ">{{person.profile.follower.count}} students registered</div>
 						    	<br>
 						    	<br>
 					        </div>
@@ -117,6 +158,7 @@
 			        </div>
 			        {% endfor %}
 		        </div>
+		        {% endif %}
 		        <div>
 		        </div>
 	     	</div>
